@@ -19,6 +19,9 @@ namespace API
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
+        [OperationContract]
+        string getName(string name);
+
         // TODO: Add your service operations here
     }
 

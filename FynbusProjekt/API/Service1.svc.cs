@@ -29,5 +29,11 @@ namespace API
             }
             return composite;
         }
+
+        public string getName(string name) 
+        {
+            //returner database data
+            return "testString";
+        }
     }
 }
