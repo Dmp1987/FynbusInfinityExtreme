@@ -34,7 +34,14 @@ namespace API
 
         public string getName(string name) 
         {
-            return "string";
+            var db = new fynbusprojektEntities();
+
+            var bidInf = new BidInfo();
+
+            bidInf.BidderName = "Kagemand";
+
+            var bidinf = db.BidInfo.Find(1);
+            return "";
         }
     }
 }
