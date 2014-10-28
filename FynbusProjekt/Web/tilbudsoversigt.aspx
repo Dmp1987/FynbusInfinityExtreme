@@ -21,7 +21,7 @@
                             Kage med Ost
                         </td>
                         <td>
-                            Noget
+                            Noget lort
                         </td>
                     </tr>
                 </tbody>
