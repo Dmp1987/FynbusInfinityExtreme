@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -32,7 +33,13 @@ namespace API
             return composite;
         }
 
-        public string getName(string name) 
+        public string getName(string name)
+        {
+            test();
+            return "";
+        }
+
+        public void test()
         {
             var db = new fynbusprojektEntities();
 
@@ -41,7 +48,7 @@ namespace API
             bidInf.BidderName = "Kagemand";
 
             var bidinf = db.BidInfo.Find(1);
-            return "";
+            var kage = "ost";
         }
     }
 }

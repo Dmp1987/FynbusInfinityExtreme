@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="tilbudsoversigt.aspx.cs" Inherits="Web.tilbudsoversigt" %>
+﻿<%@ Page AutoEventWireup="true" CodeBehind="tilbudsoversigt.aspx.cs" Inherits="Web.tilbudsoversigt" Language="C#" MasterPageFile="~/Site.Master" Title="" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -21,7 +21,7 @@
                             Kage med Ost
                         </td>
                         <td>
-                            Noget lort
+                            Noget
                         </td>
                     </tr>
                 </tbody>
