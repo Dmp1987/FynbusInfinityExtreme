@@ -7,6 +7,7 @@ using System.ServiceModel.Web;
 using System.Text;
 using Model;
 
+
 namespace API
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
@@ -33,8 +34,7 @@ namespace API
 
         public string getName(string name) 
         {
-            //returner database data
-            return "testString";
+            return "string";
         }
     }
 }
