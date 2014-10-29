@@ -4,22 +4,22 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="fynbusprojektModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="fynbusprojektModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BidInfo">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BidderName" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="CVR" Type="int" Nullable="false" />
-          <Property Name="LastEdit" Type="date" Nullable="false" />
-          <Property Name="OfferNumber" Type="int" Nullable="false" />
+          <Property Name="BidderName" Type="varchar" MaxLength="255" />
+          <Property Name="CVR" Type="int" />
+          <Property Name="LastEdit" Type="date" />
+          <Property Name="OfferNumber" Type="int" />
         </EntityType>
         <EntityType Name="ContactInfo">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Type="bigint" Nullable="false" />
           <Property Name="City" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Kommune" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Postnummer" Type="int" Nullable="false" />
@@ -30,22 +30,22 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="DatoForRegistrering" Type="date" Nullable="false" />
-          <Property Name="DokumentationsInfo" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="RegistreringsNummer" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="Tilladelse_Gyldig" Type="date" Nullable="false" />
-          <Property Name="Tilladelse_Nummer" Type="int" Nullable="false" />
-          <Property Name="Tilladelse_Type" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="TrafikSelskab" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="UdstedendeMyndighed" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="DatoForRegistrering" Type="date" />
+          <Property Name="DokumentationsInfo" Type="varchar" MaxLength="255" />
+          <Property Name="RegistreringsNummer" Type="varchar" MaxLength="255" />
+          <Property Name="Tilladelse_Gyldig" Type="date" />
+          <Property Name="Tilladelse_Nummer" Type="int" />
+          <Property Name="Tilladelse_Type" Type="varchar" MaxLength="255" />
+          <Property Name="TrafikSelskab" Type="varchar" MaxLength="255" />
+          <Property Name="UdstedendeMyndighed" Type="varchar" MaxLength="255" />
           <Property Name="KlarTilDrift_id" Type="bigint" />
         </EntityType>
         <EntityType Name="Equipment">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Type="bigint" Nullable="false" />
           <Property Name="Barnestol_0_13kg" Type="bit" Nullable="false" />
           <Property Name="Barnestol_15_36kg" Type="bit" Nullable="false" />
           <Property Name="Barnestol_9_18kg" Type="bit" Nullable="false" />
@@ -58,7 +58,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Type="bigint" Nullable="false" />
           <Property Name="GarantiVognNummer" Type="int" Nullable="false" />
           <Property Name="RegSerieNummer" Type="int" Nullable="false" />
           <Property Name="SecondaryOS" Type="varchar" MaxLength="255" Nullable="false" />
@@ -70,7 +70,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Type="bigint" Nullable="false" />
           <Property Name="HverdagAftenNatKoersel" Type="int" Nullable="false" />
           <Property Name="HverdagAftenNatOpstartsGebyr" Type="int" Nullable="false" />
           <Property Name="HverdagAftenNatVentetid" Type="int" Nullable="false" />
@@ -171,8 +171,7 @@
             <End Role="PriceList" EntitySet="PriceList" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="fynbusprojektModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -208,15 +207,15 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="DatoForRegistrering" Type="DateTime" Nullable="false" />
-          <Property Name="DokumentationsInfo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="RegistreringsNummer" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Tilladelse_Gyldig" Type="DateTime" Nullable="false" />
-          <Property Name="Tilladelse_Nummer" Type="Int32" Nullable="false" />
-          <Property Name="Tilladelse_Type" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TrafikSelskab" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="UdstedendeMyndighed" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="KlarTilDrift_id" Type="Int64" />
+          <Property Name="DatoForRegistrering" Type="DateTime" Nullable="true" />
+          <Property Name="DokumentationsInfo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="RegistreringsNummer" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="Tilladelse_Gyldig" Type="DateTime" Nullable="true" />
+          <Property Name="Tilladelse_Nummer" Type="Int32" Nullable="true" />
+          <Property Name="Tilladelse_Type" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="TrafikSelskab" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="UdstedendeMyndighed" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="KlarTilDrift_id" Type="Int64" Nullable="true" />
           <NavigationProperty Name="BidInfo" Relationship="Self.Documentation_ibfk_1" FromRole="Documentation" ToRole="BidInfo" />
         </EntityType>
         <EntityType Name="Equipment">

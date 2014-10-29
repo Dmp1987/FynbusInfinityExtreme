@@ -103,6 +103,7 @@
     </None>
     <None Include="Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

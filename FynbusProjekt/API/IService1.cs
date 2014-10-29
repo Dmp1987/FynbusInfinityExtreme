@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using Model;
 
 namespace API
 {
@@ -12,17 +13,59 @@ namespace API
     [ServiceContract]
     public interface IService1
     {
+        [OperationContract]
+        string GetName(int id);
 
         [OperationContract]
-        string GetData(int value);
+        BidInfo GetBidinfo(int id);
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        object GetContactInfo(int id);
 
         [OperationContract]
-        string getName(string name);
+        object GetDocumentation(int id);
 
-        // TODO: Add your service operations here
+        [OperationContract]
+        object GetEquipment(int id);
+
+        [OperationContract]
+        object GetExpandedBifInfo(int id);
+
+        [OperationContract]
+        object GetPriceList(int id);
+
+        [OperationContract]
+        BidInfo CreateBidInfo(string newBid);
+
+        [OperationContract]
+        object CreateContactInfo(BidInfo newBid);
+
+        [OperationContract]
+        object CreateDocumentation(BidInfo newBid);
+
+        [OperationContract]
+        object CreateEquipment(BidInfo newBid);
+
+        [OperationContract]
+        object CreateExpandedBifInfo(BidInfo newBid);
+
+        [OperationContract]
+        object CreatePriceList(BidInfo newBid);
+
+        [OperationContract]
+        object UpdateBidInfo(object newBid);
+
+        //[OperationContract]
+        //object UpdateContactInfo(BidInfo newBid);
+
+        //[OperationContract]
+        //object UpdateDocumentation(BidInfo newBid);
+
+        //[OperationContract]
+        //object UpdateEquipment(BidInfo newBid);
+
+        //[OperationContract]
+        //object UpdateExpandedBidInfo(BidInfo newBid);
     }
 
 
