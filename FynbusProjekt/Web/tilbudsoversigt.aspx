@@ -1,10 +1,19 @@
 ﻿<%@ Page AutoEventWireup="true" CodeBehind="tilbudsoversigt.aspx.cs" Inherits="Web.tilbudsoversigt" Language="C#" MasterPageFile="~/Site.Master" Title="" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#dataTable').DataTable({
+                searching: true,
+                ordering: true
+            });
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container">
-        <div class="col-lg-12">
-            <table class="table table-bordered table-condensed table-hover table-responsive table-striped">
+    
+    <h1 class="text-center">Tilbudsoversigt</h1>
+    <hr/>
+            <table class="table table-bordered table-condensed table-hover table-responsive table-striped" id="dataTable">
                 <thead>
                     <tr>
                         <th>
@@ -26,6 +35,4 @@
                     </tr>
                 </tbody>
             </table>
-        </div>    
-    </div>
 </asp:Content>
