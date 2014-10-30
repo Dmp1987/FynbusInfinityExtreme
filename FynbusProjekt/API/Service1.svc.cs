@@ -161,22 +161,23 @@ namespace API
 
                 db.SaveChanges();
 
-                return db.Entry(newDbEntry).Entity;
+                BidInfo newlyCreatedEntry = db.Entry(newDbEntry).Entity;
+                
+                if (newlyCreatedEntry == null)
+                {
+                    throw new Exception();
+                }
+                else
+                {
+                    return newlyCreatedEntry;
+                }               
+
             }
         }
 
-        public void CreateContactInfo(int id, ContactInfo newContactInfo)
+        public void CreateContactInfo(ContactInfo newContactInfo)
         {
-            var db = new fynbusprojektEntities();
-
-            if (id != null)
-            {
-                
-            }
-
-            db.ContactInfo.Add(newContactInfo);
-
-            db.SaveChanges();
+               //wolla!
         }
 
         public void CreateDocumentation(BidInfo newBid)
