@@ -20,11 +20,11 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="bigint" Nullable="false" />
-          <Property Name="City" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="Kommune" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="Postnummer" Type="int" Nullable="false" />
-          <Property Name="Vejnavn" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="Vejnummer" Type="int" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="255" />
+          <Property Name="Kommune" Type="varchar" MaxLength="255" />
+          <Property Name="Postnummer" Type="int" />
+          <Property Name="Vejnavn" Type="varchar" MaxLength="255" />
+          <Property Name="Vejnummer" Type="int" />
         </EntityType>
         <EntityType Name="Documentation">
           <Key>
@@ -46,42 +46,42 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="bigint" Nullable="false" />
-          <Property Name="Barnestol_0_13kg" Type="bit" Nullable="false" />
-          <Property Name="Barnestol_15_36kg" Type="bit" Nullable="false" />
-          <Property Name="Barnestol_9_18kg" Type="bit" Nullable="false" />
-          <Property Name="Barnestol_9_36kg" Type="bit" Nullable="false" />
-          <Property Name="Barnestol_Integreret" Type="bit" Nullable="false" />
-          <Property Name="TrappeMaskine_120" Type="bit" Nullable="false" />
-          <Property Name="TrappeMaskine_160" Type="bit" Nullable="false" />
+          <Property Name="Barnestol_0_13kg" Type="bit" />
+          <Property Name="Barnestol_15_36kg" Type="bit" />
+          <Property Name="Barnestol_9_18kg" Type="bit" />
+          <Property Name="Barnestol_9_36kg" Type="bit" />
+          <Property Name="Barnestol_Integreret" Type="bit" />
+          <Property Name="TrappeMaskine_120" Type="bit" />
+          <Property Name="TrappeMaskine_160" Type="bit" />
         </EntityType>
         <EntityType Name="ExpandedBidInfo">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="bigint" Nullable="false" />
-          <Property Name="GarantiVognNummer" Type="int" Nullable="false" />
-          <Property Name="RegSerieNummer" Type="int" Nullable="false" />
-          <Property Name="SecondaryOS" Type="varchar" MaxLength="255" Nullable="false" />
-          <Property Name="TelefonNummer" Type="int" Nullable="false" />
-          <Property Name="VognType" Type="int" Nullable="false" />
-          <Property Name="VognloebsNummer" Type="int" Nullable="false" />
+          <Property Name="GarantiVognNummer" Type="int" />
+          <Property Name="RegSerieNummer" Type="int" />
+          <Property Name="SecondaryOS" Type="varchar" MaxLength="255" />
+          <Property Name="TelefonNummer" Type="int" />
+          <Property Name="VognType" Type="int" />
+          <Property Name="VognloebsNummer" Type="int" />
         </EntityType>
         <EntityType Name="PriceList">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="bigint" Nullable="false" />
-          <Property Name="HverdagAftenNatKoersel" Type="int" Nullable="false" />
-          <Property Name="HverdagAftenNatOpstartsGebyr" Type="int" Nullable="false" />
-          <Property Name="HverdagAftenNatVentetid" Type="int" Nullable="false" />
-          <Property Name="HverdageKoersel" Type="int" Nullable="false" />
-          <Property Name="HverdageOpstartsGebyr" Type="int" Nullable="false" />
-          <Property Name="HverdageVenteTid" Type="int" Nullable="false" />
-          <Property Name="PrisPerLoeft_Trappemaskine" Type="int" Nullable="false" />
-          <Property Name="WeekendHelligdagKoersel" Type="int" Nullable="false" />
-          <Property Name="WeekendHelligdagOpstartsGebyr" Type="int" Nullable="false" />
-          <Property Name="WeekendHelligdagVentetid" Type="int" Nullable="false" />
-          <Property Name="YderligInfo" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="HverdagAftenNatKoersel" Type="int" />
+          <Property Name="HverdagAftenNatOpstartsGebyr" Type="int" />
+          <Property Name="HverdagAftenNatVentetid" Type="int" />
+          <Property Name="HverdageKoersel" Type="int" />
+          <Property Name="HverdageOpstartsGebyr" Type="int" />
+          <Property Name="HverdageVenteTid" Type="int" />
+          <Property Name="PrisPerLoeft_Trappemaskine" Type="int" />
+          <Property Name="WeekendHelligdagKoersel" Type="int" />
+          <Property Name="WeekendHelligdagOpstartsGebyr" Type="int" />
+          <Property Name="WeekendHelligdagVentetid" Type="int" />
+          <Property Name="YderligInfo" Type="varchar" MaxLength="255" />
         </EntityType>
         <Association Name="ContactInfo_ibfk_1">
           <End Role="BidInfo" Type="Self.BidInfo" Multiplicity="1" />
@@ -195,11 +195,11 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Kommune" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Postnummer" Type="Int32" Nullable="false" />
-          <Property Name="Vejnavn" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Vejnummer" Type="Int32" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="Kommune" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="Postnummer" Type="Int32" Nullable="true" />
+          <Property Name="Vejnavn" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="Vejnummer" Type="Int32" Nullable="true" />
           <NavigationProperty Name="BidInfo" Relationship="Self.ContactInfo_ibfk_1" FromRole="ContactInfo" ToRole="BidInfo" />
         </EntityType>
         <EntityType Name="Documentation">
@@ -223,13 +223,13 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Barnestol_0_13kg" Type="Boolean" Nullable="false" />
-          <Property Name="Barnestol_15_36kg" Type="Boolean" Nullable="false" />
-          <Property Name="Barnestol_9_18kg" Type="Boolean" Nullable="false" />
-          <Property Name="Barnestol_9_36kg" Type="Boolean" Nullable="false" />
-          <Property Name="Barnestol_Integreret" Type="Boolean" Nullable="false" />
-          <Property Name="TrappeMaskine_120" Type="Boolean" Nullable="false" />
-          <Property Name="TrappeMaskine_160" Type="Boolean" Nullable="false" />
+          <Property Name="Barnestol_0_13kg" Type="Boolean" Nullable="true" />
+          <Property Name="Barnestol_15_36kg" Type="Boolean" Nullable="true" />
+          <Property Name="Barnestol_9_18kg" Type="Boolean" Nullable="true" />
+          <Property Name="Barnestol_9_36kg" Type="Boolean" Nullable="true" />
+          <Property Name="Barnestol_Integreret" Type="Boolean" Nullable="true" />
+          <Property Name="TrappeMaskine_120" Type="Boolean" Nullable="true" />
+          <Property Name="TrappeMaskine_160" Type="Boolean" Nullable="true" />
           <NavigationProperty Name="BidInfo" Relationship="Self.Equipment_ibfk_1" FromRole="Equipment" ToRole="BidInfo" />
         </EntityType>
         <EntityType Name="ExpandedBidInfo">
@@ -237,12 +237,12 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="GarantiVognNummer" Type="Int32" Nullable="false" />
-          <Property Name="RegSerieNummer" Type="Int32" Nullable="false" />
-          <Property Name="SecondaryOS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TelefonNummer" Type="Int32" Nullable="false" />
-          <Property Name="VognType" Type="Int32" Nullable="false" />
-          <Property Name="VognloebsNummer" Type="Int32" Nullable="false" />
+          <Property Name="GarantiVognNummer" Type="Int32" Nullable="true" />
+          <Property Name="RegSerieNummer" Type="Int32" Nullable="true" />
+          <Property Name="SecondaryOS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="TelefonNummer" Type="Int32" Nullable="true" />
+          <Property Name="VognType" Type="Int32" Nullable="true" />
+          <Property Name="VognloebsNummer" Type="Int32" Nullable="true" />
           <NavigationProperty Name="BidInfo" Relationship="Self.ExpandedBidInfo_ibfk_1" FromRole="ExpandedBidInfo" ToRole="BidInfo" />
         </EntityType>
         <EntityType Name="PriceList">
@@ -250,17 +250,17 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="HverdagAftenNatKoersel" Type="Int32" Nullable="false" />
-          <Property Name="HverdagAftenNatOpstartsGebyr" Type="Int32" Nullable="false" />
-          <Property Name="HverdagAftenNatVentetid" Type="Int32" Nullable="false" />
-          <Property Name="HverdageKoersel" Type="Int32" Nullable="false" />
-          <Property Name="HverdageOpstartsGebyr" Type="Int32" Nullable="false" />
-          <Property Name="HverdageVenteTid" Type="Int32" Nullable="false" />
-          <Property Name="PrisPerLoeft_Trappemaskine" Type="Int32" Nullable="false" />
-          <Property Name="WeekendHelligdagKoersel" Type="Int32" Nullable="false" />
-          <Property Name="WeekendHelligdagOpstartsGebyr" Type="Int32" Nullable="false" />
-          <Property Name="WeekendHelligdagVentetid" Type="Int32" Nullable="false" />
-          <Property Name="YderligInfo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HverdagAftenNatKoersel" Type="Int32" Nullable="true" />
+          <Property Name="HverdagAftenNatOpstartsGebyr" Type="Int32" Nullable="true" />
+          <Property Name="HverdagAftenNatVentetid" Type="Int32" Nullable="true" />
+          <Property Name="HverdageKoersel" Type="Int32" Nullable="true" />
+          <Property Name="HverdageOpstartsGebyr" Type="Int32" Nullable="true" />
+          <Property Name="HverdageVenteTid" Type="Int32" Nullable="true" />
+          <Property Name="PrisPerLoeft_Trappemaskine" Type="Int32" Nullable="true" />
+          <Property Name="WeekendHelligdagKoersel" Type="Int32" Nullable="true" />
+          <Property Name="WeekendHelligdagOpstartsGebyr" Type="Int32" Nullable="true" />
+          <Property Name="WeekendHelligdagVentetid" Type="Int32" Nullable="true" />
+          <Property Name="YderligInfo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="true" />
           <NavigationProperty Name="BidInfo" Relationship="Self.PriceList_ibfk_1" FromRole="PriceList" ToRole="BidInfo" />
         </EntityType>
         <Association Name="ContactInfo_ibfk_1">

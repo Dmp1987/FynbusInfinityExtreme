@@ -315,7 +315,7 @@
                                             </button>
                                         </span>
                                     </div>
-                                    <!-- /input-group -->
+                                    <!-- /input-group -->   
                                 </li>
                                 <li>
                                     <a href="SBAdmin/index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
@@ -325,10 +325,10 @@
                                     <!-- /.nav-second-level -->
                                 </li>
                                 <li>
-                                    <a href="SBAdmin/tables.html"><i class="fa fa-table fa-fw"></i> Nyt tilbud</a>
+                                    <a href="/createoffer.aspx"><i class="fa fa-table fa-fw"></i> Nyt tilbud</a>
                                 </li>
                                 <li>
-                                    <a href="SBAdmin/forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                                    <a href="SBAdmin/forms.html"><i class="fa fa-edit fa-fw"></i> Indlæs data fra excel</a>
                                 </li>
                                 <li>
                                     <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>

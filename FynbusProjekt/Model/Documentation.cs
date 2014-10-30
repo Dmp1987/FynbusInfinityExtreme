@@ -37,7 +37,7 @@ namespace Model
         public string UdstedendeMyndighed { get; set; }
         [DataMember]
         public Nullable<long> KlarTilDrift_id { get; set; }
-        
+
         [DataMember]
         public virtual BidInfo BidInfo { get; set; }
     }

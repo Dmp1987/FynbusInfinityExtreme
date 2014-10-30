@@ -7,20 +7,30 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Runtime.Serialization;
+
 namespace Model
 {
     using System;
     using System.Collections.Generic;
     
+    [DataContract]
     public partial class ContactInfo
     {
+        [DataMember]
         public long id { get; set; }
+        [DataMember]
         public string City { get; set; }
+        [DataMember]
         public string Kommune { get; set; }
-        public int Postnummer { get; set; }
+        [DataMember]
+        public Nullable<int> Postnummer { get; set; }
+        [DataMember]
         public string Vejnavn { get; set; }
-        public int Vejnummer { get; set; }
-    
+        [DataMember]
+        public Nullable<int> Vejnummer { get; set; }
+
+    [DataMember]
         public virtual BidInfo BidInfo { get; set; }
     }
 }

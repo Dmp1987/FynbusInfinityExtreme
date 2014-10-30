@@ -7,22 +7,33 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Runtime.Serialization;
+
 namespace Model
 {
     using System;
     using System.Collections.Generic;
     
+    [DataContract]
     public partial class Equipment
     {
+        [DataMember]
         public long id { get; set; }
-        public bool Barnestol_0_13kg { get; set; }
-        public bool Barnestol_15_36kg { get; set; }
-        public bool Barnestol_9_18kg { get; set; }
-        public bool Barnestol_9_36kg { get; set; }
-        public bool Barnestol_Integreret { get; set; }
-        public bool TrappeMaskine_120 { get; set; }
-        public bool TrappeMaskine_160 { get; set; }
-    
+        [DataMember]
+        public Nullable<bool> Barnestol_0_13kg { get; set; }
+        [DataMember]
+        public Nullable<bool> Barnestol_15_36kg { get; set; }
+        [DataMember]
+        public Nullable<bool> Barnestol_9_18kg { get; set; }
+        [DataMember]
+        public Nullable<bool> Barnestol_9_36kg { get; set; }
+        [DataMember]
+        public Nullable<bool> Barnestol_Integreret { get; set; }
+        [DataMember]
+        public Nullable<bool> TrappeMaskine_120 { get; set; }
+        [DataMember]
+        public Nullable<bool> TrappeMaskine_160 { get; set; }
+        [DataMember]
         public virtual BidInfo BidInfo { get; set; }
     }
 }

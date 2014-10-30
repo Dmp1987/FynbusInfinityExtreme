@@ -7,21 +7,32 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Runtime.Serialization;
+
 namespace Model
 {
     using System;
     using System.Collections.Generic;
     
+    [DataContract]
     public partial class ExpandedBidInfo
     {
+        [DataMember]
         public long id { get; set; }
-        public int GarantiVognNummer { get; set; }
-        public int RegSerieNummer { get; set; }
+        [DataMember]
+        public Nullable<int> GarantiVognNummer { get; set; }
+        [DataMember]
+        public Nullable<int> RegSerieNummer { get; set; }
+        [DataMember]
         public string SecondaryOS { get; set; }
-        public int TelefonNummer { get; set; }
-        public int VognType { get; set; }
-        public int VognloebsNummer { get; set; }
-    
+        [DataMember]
+        public Nullable<int> TelefonNummer { get; set; }
+        [DataMember]
+        public Nullable<int> VognType { get; set; }
+        [DataMember]
+        public Nullable<int> VognloebsNummer { get; set; }
+        
+        [DataMember]
         public virtual BidInfo BidInfo { get; set; }
     }
 }
