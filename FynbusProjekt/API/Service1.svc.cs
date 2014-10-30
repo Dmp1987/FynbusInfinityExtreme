@@ -126,35 +126,60 @@ namespace API
 
         [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         [WebGet(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        public BidInfo CreateBidInfo(string bidInfo)
+        public BidInfo CreateBidInfo(BidInfo newBidInfo)
         {
             using (var db = new fynbusprojektEntities())
             {
-                var newBidInfo = new BidInfo()
-                {
-                    BidderName = "Kage Hans",
-                };
-
-
-                //var kage = db.BidInfo.Add(newBidInfo);
-                //db.Documentation.Add(doc);
-
+                var bidInfo = new BidInfo();
                 var doc = new Documentation();
-                var kage = db.BidInfo.Add(newBidInfo);
+                var exp = new ExpandedBidInfo();
+                var pList = new PriceList();
+                var eq = new Equipment();
+                var contactInfo = new ContactInfo();
+
+                var newDbEntry = db.BidInfo.Add(bidInfo);
+
                 db.SaveChanges();
-                doc.id = db.Entry(kage).Property(p => p.id).CurrentValue;
-                var kost = db.Documentation.Add(doc);
+
+                var id = db.Entry(newDbEntry).Property(p => p.id).CurrentValue;
+
+                if (db.BidInfo.Find(id) != null)
+                {
+                    doc.id = id;
+                    exp.id = id;
+                    pList.id = id;
+                    eq.id = id;
+                    contactInfo.id = id;
+                }
+                
+                //gem alle elementer
+                db.Documentation.Add(doc);
+                db.ExpandedBidInfo.Add(exp);
+                db.PriceList.Add(pList);
+                db.Equipment.Add(eq);
+                db.ContactInfo.Add(contactInfo);
+
                 db.SaveChanges();
-                return db.Entry(kage).Entity;
+
+                return db.Entry(newDbEntry).Entity;
             }
         }
 
-        public object CreateContactInfo(BidInfo newBid)
+        public void CreateContactInfo(int id, ContactInfo newContactInfo)
         {
-            throw new NotImplementedException();
+            var db = new fynbusprojektEntities();
+
+            if (id != null)
+            {
+                
+            }
+
+            db.ContactInfo.Add(newContactInfo);
+
+            db.SaveChanges();
         }
 
-        public object CreateDocumentation(BidInfo newBid)
+        public void CreateDocumentation(BidInfo newBid)
         {
             throw new NotImplementedException();
         }
