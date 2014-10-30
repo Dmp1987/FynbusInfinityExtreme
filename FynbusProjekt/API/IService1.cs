@@ -20,19 +20,19 @@ namespace API
         BidInfo GetBidinfo(int id);
 
         [OperationContract]
-        object GetContactInfo(int id);
+        ContactInfo GetContactInfo(int id);
 
         [OperationContract]
-        object GetDocumentation(int id);
+        Documentation GetDocumentation(int id);
 
         [OperationContract]
-        object GetEquipment(int id);
+        Equipment GetEquipment(int id);
 
         [OperationContract]
-        object GetExpandedBifInfo(int id);
+        ExpandedBidInfo GetExpandedBifInfo(int id);
 
         [OperationContract]
-        object GetPriceList(int id);
+        PriceList GetPriceList(int id);
 
         [OperationContract]
         BidInfo CreateBidInfo(string newBid);
