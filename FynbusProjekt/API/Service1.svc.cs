@@ -76,29 +76,52 @@ namespace API
             //};
         }
 
-        public object GetContactInfo(int id)
-        {
-            throw new NotImplementedException();
+        public ContactInfo GetContactInfo(int id)
+        {           
+           using( var db = new fynbusprojektEntities())
+           {
+               object contactInfo = db.ContactInfo.Find(id);
+
+               return contactInfo as ContactInfo;
+           }
         }
 
-        public object GetDocumentation(int id)
+        public Documentation GetDocumentation(int id)
         {
-            throw new NotImplementedException();
+            using (var db = new fynbusprojektEntities())
+            {
+                object documentInfo = db.Documentation.Find(id);
+
+                return documentInfo as Documentation;
+            }
         }
 
-        public object GetEquipment(int id)
+        public Equipment GetEquipment(int id)
         {
-            throw new NotImplementedException();
+            using (var db = new fynbusprojektEntities())
+            {
+                Equipment equipment = db.Equipment.Find(id);
+
+                return equipment;
+            }
         }
 
-        public object GetExpandedBifInfo(int id)
+        public ExpandedBidInfo GetExpandedBifInfo(int id)
         {
-            throw new NotImplementedException();
+            using (var db = new fynbusprojektEntities())
+            {
+                ExpandedBidInfo ExpInfo = db.ExpandedBidInfo.Find(id);
+                return ExpInfo;
+            }
         }
 
-        public object GetPriceList(int id)
+        public PriceList GetPriceList(int id)
         {
-            throw new NotImplementedException();
+            using (var db = new fynbusprojektEntities())
+            {
+                PriceList prices = db.PriceList.Find(id);
+                return prices;
+            }
         }
 
         [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
