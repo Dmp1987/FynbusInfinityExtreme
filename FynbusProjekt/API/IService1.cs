@@ -35,13 +35,13 @@ namespace API
         PriceList GetPriceList(int id);
 
         [OperationContract]
-        BidInfo CreateBidInfo(string newBid);
+        BidInfo CreateBidInfo(BidInfo newBidInfo);
 
         [OperationContract]
-        object CreateContactInfo(BidInfo newBid);
+        void CreateContactInfo(ContactInfo newContactInfo);
 
         [OperationContract]
-        object CreateDocumentation(BidInfo newBid);
+        void CreateDocumentation(BidInfo newBid);
 
         [OperationContract]
         object CreateEquipment(BidInfo newBid);
