@@ -13,13 +13,16 @@ namespace Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            submit.ServerClick += submit_ServerClick;
+            DataBind();
+            submit.ServerClick += delegate(object o, EventArgs args)
+            {
+
+            };
         }
 
         void submit_ServerClick(object sender, EventArgs e)
         {
-
-            FormsAuthentication.RedirectFromLoginPage(Brugernavn.Value, true);
+            
         }
     }
 }

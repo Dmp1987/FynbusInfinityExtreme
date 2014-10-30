@@ -1,6 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Web.SiteMaster" %>
 <%@ Import Namespace="System.Web.Optimization" %>
-
 <!DOCTYPE html>
 <html lang="en">
     <head runat="server">
@@ -322,19 +321,11 @@
                                     <a href="SBAdmin/index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                                    <ul class="nav nav-second-level">
-                                        <li>
-                                            <a href="SBAdmin/flot.html">Flot Charts</a>
-                                        </li>
-                                        <li>
-                                            <a href="SBAdmin/morris.html">Morris.js Charts</a>
-                                        </li>
-                                    </ul>
+                                    <a href="/tilbudsoversigt.aspx"><i class="fa fa-bar-chart-o fa-fw"></i> Tilbudsoversigt</a>
                                     <!-- /.nav-second-level -->
                                 </li>
                                 <li>
-                                    <a href="SBAdmin/tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                                    <a href="SBAdmin/tables.html"><i class="fa fa-table fa-fw"></i> Nyt tilbud</a>
                                 </li>
                                 <li>
                                     <a href="SBAdmin/forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>

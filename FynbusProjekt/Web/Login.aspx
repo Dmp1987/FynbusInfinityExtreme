@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head runat="server">
-        <title></title>
+        <title>Login</title>
         <style>
             @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 
@@ -29,10 +29,13 @@
                 padding: 10px;
                 text-align: center;
                 text-decoration: none;
+                -moz-transition: background .3s;
+                -ms-transition: background .3s;
+                -o-transition: background .3s;
                 transition: background .3s;
                 width: 100px;
             }
-            
+
             .button:hover { background: #2288bb; }
 
             #login {
@@ -103,7 +106,7 @@
     </head>
     <body>
         <form id="form1" runat="server">
-            <span href="#" class="button" id="toggle-login">Log in</span>
+            <span href="#" class="button" id="toggle-login">FynBus</span>
 
             <div id="login">
                 <div id="triangle"></div>

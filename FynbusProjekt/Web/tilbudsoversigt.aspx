@@ -1,4 +1,4 @@
-﻿<%@ Page AutoEventWireup="true" CodeBehind="tilbudsoversigt.aspx.cs" Inherits="Web.tilbudsoversigt" Language="C#" MasterPageFile="~/Site.Master" Title="" %>
+﻿<%@ Page AutoEventWireup="true" CodeBehind="tilbudsoversigt.aspx.cs" Inherits="Web.tilbudsoversigt" Language="C#" MasterPageFile="~/Site.Master" Title=""  EnableEventValidation="false"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <script type="text/javascript">
         $(document).ready(function () {
