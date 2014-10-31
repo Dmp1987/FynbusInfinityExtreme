@@ -55,6 +55,9 @@ namespace API
         [OperationContract]
         BidInfo UpdateBidInfo(BidInfo bid);
 
+        [OperationContract]
+        object importExcel(object ExcelDocument);
+
         //[OperationContract]
         //object UpdateContactInfo(BidInfo newBid);
 

@@ -15,11 +15,12 @@ namespace API
 
             BidInfo bidinf = db.BidInfo.Find(1);
 
-            var newBidInf = new BidInfo {BidderName = "Kagemand"};
+            //var newBidInf = new BidInfo {BidderName = "Kagemand"};
 
-            db.BidInfo.Add(newBidInf);
+            //db.BidInfo.Add(newBidInf);
 
-            db.SaveChanges();
+            //db.SaveChanges();
+
             return bidinf.BidderName;
         }
 
@@ -249,6 +250,12 @@ namespace API
                 db.SaveChanges();
                 return db.BidInfo.Find(bid.id);
             }
+        }
+
+
+        public object importExcel(object ExcelDocument)
+        {
+            throw new NotImplementedException();
         }
     }
 }

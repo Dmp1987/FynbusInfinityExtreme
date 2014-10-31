@@ -374,7 +374,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="createoffer.aspx.cs">
       <DependentUpon>createoffer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="createoffer.aspx.designer.cs">
       <DependentUpon>createoffer.aspx</DependentUpon>
