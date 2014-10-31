@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f49cbad94f24405a81803ec9b09c1967" Name="Diagram1">
+      <Diagram DiagramId="f49cbad94f24405a81803ec9b09c1967" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="fynbusprojektModel.BidInfo" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="fynbusprojektModel.ContactInfo" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="fynbusprojektModel.Documentation" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
