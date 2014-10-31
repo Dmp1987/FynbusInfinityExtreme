@@ -221,13 +221,13 @@ namespace Web.APIService {
         private string KommuneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PostnummerField;
+        private System.Nullable<int> PostnummerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string VejnavnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int VejnummerField;
+        private System.Nullable<int> VejnummerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long idField;
@@ -282,7 +282,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Postnummer {
+        public System.Nullable<int> Postnummer {
             get {
                 return this.PostnummerField;
             }
@@ -308,7 +308,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Vejnummer {
+        public System.Nullable<int> Vejnummer {
             get {
                 return this.VejnummerField;
             }
@@ -558,28 +558,28 @@ namespace Web.APIService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool Barnestol_0_13kgField;
+        private System.Nullable<bool> Barnestol_0_13kgField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool Barnestol_15_36kgField;
+        private System.Nullable<bool> Barnestol_15_36kgField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool Barnestol_9_18kgField;
+        private System.Nullable<bool> Barnestol_9_18kgField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool Barnestol_9_36kgField;
+        private System.Nullable<bool> Barnestol_9_36kgField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool Barnestol_IntegreretField;
+        private System.Nullable<bool> Barnestol_IntegreretField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private Web.APIService.BidInfo BidInfoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool TrappeMaskine_120Field;
+        private System.Nullable<bool> TrappeMaskine_120Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool TrappeMaskine_160Field;
+        private System.Nullable<bool> TrappeMaskine_160Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long idField;
@@ -595,7 +595,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Barnestol_0_13kg {
+        public System.Nullable<bool> Barnestol_0_13kg {
             get {
                 return this.Barnestol_0_13kgField;
             }
@@ -608,7 +608,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Barnestol_15_36kg {
+        public System.Nullable<bool> Barnestol_15_36kg {
             get {
                 return this.Barnestol_15_36kgField;
             }
@@ -621,7 +621,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Barnestol_9_18kg {
+        public System.Nullable<bool> Barnestol_9_18kg {
             get {
                 return this.Barnestol_9_18kgField;
             }
@@ -634,7 +634,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Barnestol_9_36kg {
+        public System.Nullable<bool> Barnestol_9_36kg {
             get {
                 return this.Barnestol_9_36kgField;
             }
@@ -647,7 +647,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Barnestol_Integreret {
+        public System.Nullable<bool> Barnestol_Integreret {
             get {
                 return this.Barnestol_IntegreretField;
             }
@@ -673,7 +673,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool TrappeMaskine_120 {
+        public System.Nullable<bool> TrappeMaskine_120 {
             get {
                 return this.TrappeMaskine_120Field;
             }
@@ -686,7 +686,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool TrappeMaskine_160 {
+        public System.Nullable<bool> TrappeMaskine_160 {
             get {
                 return this.TrappeMaskine_160Field;
             }
@@ -734,22 +734,22 @@ namespace Web.APIService {
         private Web.APIService.BidInfo BidInfoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int GarantiVognNummerField;
+        private System.Nullable<int> GarantiVognNummerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int RegSerieNummerField;
+        private System.Nullable<int> RegSerieNummerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SecondaryOSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TelefonNummerField;
+        private System.Nullable<int> TelefonNummerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int VognTypeField;
+        private System.Nullable<int> VognTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int VognloebsNummerField;
+        private System.Nullable<int> VognloebsNummerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long idField;
@@ -778,7 +778,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int GarantiVognNummer {
+        public System.Nullable<int> GarantiVognNummer {
             get {
                 return this.GarantiVognNummerField;
             }
@@ -791,7 +791,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int RegSerieNummer {
+        public System.Nullable<int> RegSerieNummer {
             get {
                 return this.RegSerieNummerField;
             }
@@ -817,7 +817,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TelefonNummer {
+        public System.Nullable<int> TelefonNummer {
             get {
                 return this.TelefonNummerField;
             }
@@ -830,7 +830,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int VognType {
+        public System.Nullable<int> VognType {
             get {
                 return this.VognTypeField;
             }
@@ -843,7 +843,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int VognloebsNummer {
+        public System.Nullable<int> VognloebsNummer {
             get {
                 return this.VognloebsNummerField;
             }
@@ -891,34 +891,34 @@ namespace Web.APIService {
         private Web.APIService.BidInfo BidInfoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int HverdagAftenNatKoerselField;
+        private System.Nullable<int> HverdagAftenNatKoerselField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int HverdagAftenNatOpstartsGebyrField;
+        private System.Nullable<int> HverdagAftenNatOpstartsGebyrField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int HverdagAftenNatVentetidField;
+        private System.Nullable<int> HverdagAftenNatVentetidField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int HverdageKoerselField;
+        private System.Nullable<int> HverdageKoerselField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int HverdageOpstartsGebyrField;
+        private System.Nullable<int> HverdageOpstartsGebyrField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int HverdageVenteTidField;
+        private System.Nullable<int> HverdageVenteTidField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PrisPerLoeft_TrappemaskineField;
+        private System.Nullable<int> PrisPerLoeft_TrappemaskineField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WeekendHelligdagKoerselField;
+        private System.Nullable<int> WeekendHelligdagKoerselField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WeekendHelligdagOpstartsGebyrField;
+        private System.Nullable<int> WeekendHelligdagOpstartsGebyrField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int WeekendHelligdagVentetidField;
+        private System.Nullable<int> WeekendHelligdagVentetidField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string YderligInfoField;
@@ -950,7 +950,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int HverdagAftenNatKoersel {
+        public System.Nullable<int> HverdagAftenNatKoersel {
             get {
                 return this.HverdagAftenNatKoerselField;
             }
@@ -963,7 +963,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int HverdagAftenNatOpstartsGebyr {
+        public System.Nullable<int> HverdagAftenNatOpstartsGebyr {
             get {
                 return this.HverdagAftenNatOpstartsGebyrField;
             }
@@ -976,7 +976,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int HverdagAftenNatVentetid {
+        public System.Nullable<int> HverdagAftenNatVentetid {
             get {
                 return this.HverdagAftenNatVentetidField;
             }
@@ -989,7 +989,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int HverdageKoersel {
+        public System.Nullable<int> HverdageKoersel {
             get {
                 return this.HverdageKoerselField;
             }
@@ -1002,7 +1002,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int HverdageOpstartsGebyr {
+        public System.Nullable<int> HverdageOpstartsGebyr {
             get {
                 return this.HverdageOpstartsGebyrField;
             }
@@ -1015,7 +1015,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int HverdageVenteTid {
+        public System.Nullable<int> HverdageVenteTid {
             get {
                 return this.HverdageVenteTidField;
             }
@@ -1028,7 +1028,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int PrisPerLoeft_Trappemaskine {
+        public System.Nullable<int> PrisPerLoeft_Trappemaskine {
             get {
                 return this.PrisPerLoeft_TrappemaskineField;
             }
@@ -1041,7 +1041,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WeekendHelligdagKoersel {
+        public System.Nullable<int> WeekendHelligdagKoersel {
             get {
                 return this.WeekendHelligdagKoerselField;
             }
@@ -1054,7 +1054,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WeekendHelligdagOpstartsGebyr {
+        public System.Nullable<int> WeekendHelligdagOpstartsGebyr {
             get {
                 return this.WeekendHelligdagOpstartsGebyrField;
             }
@@ -1067,7 +1067,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int WeekendHelligdagVentetid {
+        public System.Nullable<int> WeekendHelligdagVentetid {
             get {
                 return this.WeekendHelligdagVentetidField;
             }
@@ -1132,142 +1132,94 @@ namespace Web.APIService {
         System.Threading.Tasks.Task<Web.APIService.BidInfo> GetBidinfoAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetContactInfo", ReplyAction="http://tempuri.org/IService1/GetContactInfoResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.BidInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ContactInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Documentation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Equipment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ExpandedBidInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.PriceList))]
-        object GetContactInfo(int id);
+        Web.APIService.ContactInfo GetContactInfo(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetContactInfo", ReplyAction="http://tempuri.org/IService1/GetContactInfoResponse")]
-        System.Threading.Tasks.Task<object> GetContactInfoAsync(int id);
+        System.Threading.Tasks.Task<Web.APIService.ContactInfo> GetContactInfoAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDocumentation", ReplyAction="http://tempuri.org/IService1/GetDocumentationResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.BidInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ContactInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Documentation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Equipment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ExpandedBidInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.PriceList))]
-        object GetDocumentation(int id);
+        Web.APIService.Documentation GetDocumentation(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDocumentation", ReplyAction="http://tempuri.org/IService1/GetDocumentationResponse")]
-        System.Threading.Tasks.Task<object> GetDocumentationAsync(int id);
+        System.Threading.Tasks.Task<Web.APIService.Documentation> GetDocumentationAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetEquipment", ReplyAction="http://tempuri.org/IService1/GetEquipmentResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.BidInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ContactInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Documentation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Equipment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ExpandedBidInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.PriceList))]
-        object GetEquipment(int id);
+        Web.APIService.Equipment GetEquipment(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetEquipment", ReplyAction="http://tempuri.org/IService1/GetEquipmentResponse")]
-        System.Threading.Tasks.Task<object> GetEquipmentAsync(int id);
+        System.Threading.Tasks.Task<Web.APIService.Equipment> GetEquipmentAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetExpandedBifInfo", ReplyAction="http://tempuri.org/IService1/GetExpandedBifInfoResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.BidInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ContactInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Documentation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Equipment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ExpandedBidInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.PriceList))]
-        object GetExpandedBifInfo(int id);
+        Web.APIService.ExpandedBidInfo GetExpandedBifInfo(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetExpandedBifInfo", ReplyAction="http://tempuri.org/IService1/GetExpandedBifInfoResponse")]
-        System.Threading.Tasks.Task<object> GetExpandedBifInfoAsync(int id);
+        System.Threading.Tasks.Task<Web.APIService.ExpandedBidInfo> GetExpandedBifInfoAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetPriceList", ReplyAction="http://tempuri.org/IService1/GetPriceListResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.BidInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ContactInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Documentation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Equipment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ExpandedBidInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.PriceList))]
-        object GetPriceList(int id);
+        Web.APIService.PriceList GetPriceList(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetPriceList", ReplyAction="http://tempuri.org/IService1/GetPriceListResponse")]
-        System.Threading.Tasks.Task<object> GetPriceListAsync(int id);
+        System.Threading.Tasks.Task<Web.APIService.PriceList> GetPriceListAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateBidInfo", ReplyAction="http://tempuri.org/IService1/CreateBidInfoResponse")]
-        Web.APIService.BidInfo CreateBidInfo(string newBid);
+        Web.APIService.BidInfo CreateBidInfo(Web.APIService.BidInfo newBidInfo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateBidInfo", ReplyAction="http://tempuri.org/IService1/CreateBidInfoResponse")]
-        System.Threading.Tasks.Task<Web.APIService.BidInfo> CreateBidInfoAsync(string newBid);
+        System.Threading.Tasks.Task<Web.APIService.BidInfo> CreateBidInfoAsync(Web.APIService.BidInfo newBidInfo);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateContactInfo", ReplyAction="http://tempuri.org/IService1/CreateContactInfoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateContactInfo", ReplyAction="http://tempuri.org/IService1/UpdateContactInfoResponse")]
+        void UpdateContactInfo(Web.APIService.BidInfo bid, Web.APIService.ContactInfo contact);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateContactInfo", ReplyAction="http://tempuri.org/IService1/UpdateContactInfoResponse")]
+        System.Threading.Tasks.Task UpdateContactInfoAsync(Web.APIService.BidInfo bid, Web.APIService.ContactInfo contact);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDocumentation", ReplyAction="http://tempuri.org/IService1/UpdateDocumentationResponse")]
+        void UpdateDocumentation(Web.APIService.BidInfo bid, Web.APIService.Documentation doc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDocumentation", ReplyAction="http://tempuri.org/IService1/UpdateDocumentationResponse")]
+        System.Threading.Tasks.Task UpdateDocumentationAsync(Web.APIService.BidInfo bid, Web.APIService.Documentation doc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateEquipment", ReplyAction="http://tempuri.org/IService1/UpdateEquipmentResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.BidInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ContactInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Documentation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Equipment))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ExpandedBidInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.PriceList))]
-        object CreateContactInfo(Web.APIService.BidInfo newBid);
+        object UpdateEquipment(Web.APIService.BidInfo bid, Web.APIService.Equipment eq);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateContactInfo", ReplyAction="http://tempuri.org/IService1/CreateContactInfoResponse")]
-        System.Threading.Tasks.Task<object> CreateContactInfoAsync(Web.APIService.BidInfo newBid);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateEquipment", ReplyAction="http://tempuri.org/IService1/UpdateEquipmentResponse")]
+        System.Threading.Tasks.Task<object> UpdateEquipmentAsync(Web.APIService.BidInfo bid, Web.APIService.Equipment eq);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateDocumentation", ReplyAction="http://tempuri.org/IService1/CreateDocumentationResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateExpandedBifInfo", ReplyAction="http://tempuri.org/IService1/UpdateExpandedBifInfoResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.BidInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ContactInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Documentation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Equipment))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ExpandedBidInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.PriceList))]
-        object CreateDocumentation(Web.APIService.BidInfo newBid);
+        object UpdateExpandedBifInfo(Web.APIService.BidInfo bid, Web.APIService.ExpandedBidInfo exp);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateDocumentation", ReplyAction="http://tempuri.org/IService1/CreateDocumentationResponse")]
-        System.Threading.Tasks.Task<object> CreateDocumentationAsync(Web.APIService.BidInfo newBid);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateExpandedBifInfo", ReplyAction="http://tempuri.org/IService1/UpdateExpandedBifInfoResponse")]
+        System.Threading.Tasks.Task<object> UpdateExpandedBifInfoAsync(Web.APIService.BidInfo bid, Web.APIService.ExpandedBidInfo exp);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateEquipment", ReplyAction="http://tempuri.org/IService1/CreateEquipmentResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdatePricelist", ReplyAction="http://tempuri.org/IService1/UpdatePricelistResponse")]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.BidInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ContactInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Documentation))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Equipment))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ExpandedBidInfo))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.PriceList))]
-        object CreateEquipment(Web.APIService.BidInfo newBid);
+        object UpdatePricelist(Web.APIService.BidInfo bid, Web.APIService.PriceList pl);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateEquipment", ReplyAction="http://tempuri.org/IService1/CreateEquipmentResponse")]
-        System.Threading.Tasks.Task<object> CreateEquipmentAsync(Web.APIService.BidInfo newBid);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateExpandedBifInfo", ReplyAction="http://tempuri.org/IService1/CreateExpandedBifInfoResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.BidInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ContactInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Documentation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Equipment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ExpandedBidInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.PriceList))]
-        object CreateExpandedBifInfo(Web.APIService.BidInfo newBid);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateExpandedBifInfo", ReplyAction="http://tempuri.org/IService1/CreateExpandedBifInfoResponse")]
-        System.Threading.Tasks.Task<object> CreateExpandedBifInfoAsync(Web.APIService.BidInfo newBid);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreatePriceList", ReplyAction="http://tempuri.org/IService1/CreatePriceListResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.BidInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ContactInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Documentation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Equipment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ExpandedBidInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.PriceList))]
-        object CreatePriceList(Web.APIService.BidInfo newBid);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreatePriceList", ReplyAction="http://tempuri.org/IService1/CreatePriceListResponse")]
-        System.Threading.Tasks.Task<object> CreatePriceListAsync(Web.APIService.BidInfo newBid);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdatePricelist", ReplyAction="http://tempuri.org/IService1/UpdatePricelistResponse")]
+        System.Threading.Tasks.Task<object> UpdatePricelistAsync(Web.APIService.BidInfo bid, Web.APIService.PriceList pl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateBidInfo", ReplyAction="http://tempuri.org/IService1/UpdateBidInfoResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.BidInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ContactInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Documentation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Equipment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ExpandedBidInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.PriceList))]
-        object UpdateBidInfo(object newBid);
+        Web.APIService.BidInfo UpdateBidInfo(Web.APIService.BidInfo bid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateBidInfo", ReplyAction="http://tempuri.org/IService1/UpdateBidInfoResponse")]
-        System.Threading.Tasks.Task<object> UpdateBidInfoAsync(object newBid);
+        System.Threading.Tasks.Task<Web.APIService.BidInfo> UpdateBidInfoAsync(Web.APIService.BidInfo bid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1313,100 +1265,100 @@ namespace Web.APIService {
             return base.Channel.GetBidinfoAsync(id);
         }
         
-        public object GetContactInfo(int id) {
+        public Web.APIService.ContactInfo GetContactInfo(int id) {
             return base.Channel.GetContactInfo(id);
         }
         
-        public System.Threading.Tasks.Task<object> GetContactInfoAsync(int id) {
+        public System.Threading.Tasks.Task<Web.APIService.ContactInfo> GetContactInfoAsync(int id) {
             return base.Channel.GetContactInfoAsync(id);
         }
         
-        public object GetDocumentation(int id) {
+        public Web.APIService.Documentation GetDocumentation(int id) {
             return base.Channel.GetDocumentation(id);
         }
         
-        public System.Threading.Tasks.Task<object> GetDocumentationAsync(int id) {
+        public System.Threading.Tasks.Task<Web.APIService.Documentation> GetDocumentationAsync(int id) {
             return base.Channel.GetDocumentationAsync(id);
         }
         
-        public object GetEquipment(int id) {
+        public Web.APIService.Equipment GetEquipment(int id) {
             return base.Channel.GetEquipment(id);
         }
         
-        public System.Threading.Tasks.Task<object> GetEquipmentAsync(int id) {
+        public System.Threading.Tasks.Task<Web.APIService.Equipment> GetEquipmentAsync(int id) {
             return base.Channel.GetEquipmentAsync(id);
         }
         
-        public object GetExpandedBifInfo(int id) {
+        public Web.APIService.ExpandedBidInfo GetExpandedBifInfo(int id) {
             return base.Channel.GetExpandedBifInfo(id);
         }
         
-        public System.Threading.Tasks.Task<object> GetExpandedBifInfoAsync(int id) {
+        public System.Threading.Tasks.Task<Web.APIService.ExpandedBidInfo> GetExpandedBifInfoAsync(int id) {
             return base.Channel.GetExpandedBifInfoAsync(id);
         }
         
-        public object GetPriceList(int id) {
+        public Web.APIService.PriceList GetPriceList(int id) {
             return base.Channel.GetPriceList(id);
         }
         
-        public System.Threading.Tasks.Task<object> GetPriceListAsync(int id) {
+        public System.Threading.Tasks.Task<Web.APIService.PriceList> GetPriceListAsync(int id) {
             return base.Channel.GetPriceListAsync(id);
         }
         
-        public Web.APIService.BidInfo CreateBidInfo(string newBid) {
-            return base.Channel.CreateBidInfo(newBid);
+        public Web.APIService.BidInfo CreateBidInfo(Web.APIService.BidInfo newBidInfo) {
+            return base.Channel.CreateBidInfo(newBidInfo);
         }
         
-        public System.Threading.Tasks.Task<Web.APIService.BidInfo> CreateBidInfoAsync(string newBid) {
-            return base.Channel.CreateBidInfoAsync(newBid);
+        public System.Threading.Tasks.Task<Web.APIService.BidInfo> CreateBidInfoAsync(Web.APIService.BidInfo newBidInfo) {
+            return base.Channel.CreateBidInfoAsync(newBidInfo);
         }
         
-        public object CreateContactInfo(Web.APIService.BidInfo newBid) {
-            return base.Channel.CreateContactInfo(newBid);
+        public void UpdateContactInfo(Web.APIService.BidInfo bid, Web.APIService.ContactInfo contact) {
+            base.Channel.UpdateContactInfo(bid, contact);
         }
         
-        public System.Threading.Tasks.Task<object> CreateContactInfoAsync(Web.APIService.BidInfo newBid) {
-            return base.Channel.CreateContactInfoAsync(newBid);
+        public System.Threading.Tasks.Task UpdateContactInfoAsync(Web.APIService.BidInfo bid, Web.APIService.ContactInfo contact) {
+            return base.Channel.UpdateContactInfoAsync(bid, contact);
         }
         
-        public object CreateDocumentation(Web.APIService.BidInfo newBid) {
-            return base.Channel.CreateDocumentation(newBid);
+        public void UpdateDocumentation(Web.APIService.BidInfo bid, Web.APIService.Documentation doc) {
+            base.Channel.UpdateDocumentation(bid, doc);
         }
         
-        public System.Threading.Tasks.Task<object> CreateDocumentationAsync(Web.APIService.BidInfo newBid) {
-            return base.Channel.CreateDocumentationAsync(newBid);
+        public System.Threading.Tasks.Task UpdateDocumentationAsync(Web.APIService.BidInfo bid, Web.APIService.Documentation doc) {
+            return base.Channel.UpdateDocumentationAsync(bid, doc);
         }
         
-        public object CreateEquipment(Web.APIService.BidInfo newBid) {
-            return base.Channel.CreateEquipment(newBid);
+        public object UpdateEquipment(Web.APIService.BidInfo bid, Web.APIService.Equipment eq) {
+            return base.Channel.UpdateEquipment(bid, eq);
         }
         
-        public System.Threading.Tasks.Task<object> CreateEquipmentAsync(Web.APIService.BidInfo newBid) {
-            return base.Channel.CreateEquipmentAsync(newBid);
+        public System.Threading.Tasks.Task<object> UpdateEquipmentAsync(Web.APIService.BidInfo bid, Web.APIService.Equipment eq) {
+            return base.Channel.UpdateEquipmentAsync(bid, eq);
         }
         
-        public object CreateExpandedBifInfo(Web.APIService.BidInfo newBid) {
-            return base.Channel.CreateExpandedBifInfo(newBid);
+        public object UpdateExpandedBifInfo(Web.APIService.BidInfo bid, Web.APIService.ExpandedBidInfo exp) {
+            return base.Channel.UpdateExpandedBifInfo(bid, exp);
         }
         
-        public System.Threading.Tasks.Task<object> CreateExpandedBifInfoAsync(Web.APIService.BidInfo newBid) {
-            return base.Channel.CreateExpandedBifInfoAsync(newBid);
+        public System.Threading.Tasks.Task<object> UpdateExpandedBifInfoAsync(Web.APIService.BidInfo bid, Web.APIService.ExpandedBidInfo exp) {
+            return base.Channel.UpdateExpandedBifInfoAsync(bid, exp);
         }
         
-        public object CreatePriceList(Web.APIService.BidInfo newBid) {
-            return base.Channel.CreatePriceList(newBid);
+        public object UpdatePricelist(Web.APIService.BidInfo bid, Web.APIService.PriceList pl) {
+            return base.Channel.UpdatePricelist(bid, pl);
         }
         
-        public System.Threading.Tasks.Task<object> CreatePriceListAsync(Web.APIService.BidInfo newBid) {
-            return base.Channel.CreatePriceListAsync(newBid);
+        public System.Threading.Tasks.Task<object> UpdatePricelistAsync(Web.APIService.BidInfo bid, Web.APIService.PriceList pl) {
+            return base.Channel.UpdatePricelistAsync(bid, pl);
         }
         
-        public object UpdateBidInfo(object newBid) {
-            return base.Channel.UpdateBidInfo(newBid);
+        public Web.APIService.BidInfo UpdateBidInfo(Web.APIService.BidInfo bid) {
+            return base.Channel.UpdateBidInfo(bid);
         }
         
-        public System.Threading.Tasks.Task<object> UpdateBidInfoAsync(object newBid) {
-            return base.Channel.UpdateBidInfoAsync(newBid);
+        public System.Threading.Tasks.Task<Web.APIService.BidInfo> UpdateBidInfoAsync(Web.APIService.BidInfo bid) {
+            return base.Channel.UpdateBidInfoAsync(bid);
         }
     }
 }

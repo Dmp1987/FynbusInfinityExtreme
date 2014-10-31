@@ -38,22 +38,22 @@ namespace API
         BidInfo CreateBidInfo(BidInfo newBidInfo);
 
         [OperationContract]
-        void CreateContactInfo(ContactInfo newContactInfo);
+        ContactInfo UpdateContactInfo(BidInfo bid, ContactInfo contact);
 
         [OperationContract]
-        void CreateDocumentation(BidInfo newBid);
+        Documentation UpdateDocumentation(BidInfo bid, Documentation doc);
 
         [OperationContract]
-        object CreateEquipment(BidInfo newBid);
+        Equipment UpdateEquipment(BidInfo bid, Equipment eq);
 
         [OperationContract]
-        object CreateExpandedBifInfo(BidInfo newBid);
+        ExpandedBidInfo UpdateExpandedBifInfo(BidInfo bid, ExpandedBidInfo exp);
 
         [OperationContract]
-        object CreatePriceList(BidInfo newBid);
+        PriceList UpdatePricelist(BidInfo bid, PriceList pl);
 
         [OperationContract]
-        object UpdateBidInfo(object newBid);
+        BidInfo UpdateBidInfo(BidInfo bid);
 
         //[OperationContract]
         //object UpdateContactInfo(BidInfo newBid);

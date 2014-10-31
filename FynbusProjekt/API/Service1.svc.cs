@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.Core.Objects;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
+using System.Data.Entity.Migrations;
 using System.ServiceModel.Web;
-using System.Text;
 using Model;
-
 
 namespace API
 {
@@ -15,14 +9,13 @@ namespace API
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-
         public string GetName(int id)
         {
             var db = new fynbusprojektEntities();
 
-            var bidinf = db.BidInfo.Find(1);
+            BidInfo bidinf = db.BidInfo.Find(1);
 
-            var newBidInf = new BidInfo() {BidderName = "Kagemand"};
+            var newBidInf = new BidInfo {BidderName = "Kagemand"};
 
             db.BidInfo.Add(newBidInf);
 
@@ -32,10 +25,13 @@ namespace API
 
         public BidInfo GetBidinfo(int id)
         {
-            var db = new fynbusprojektEntities();
-            var bi = db.BidInfo.Find(id);
+            using (var db = new fynbusprojektEntities())
+            {
 
-            return bi;
+                BidInfo bi = db.BidInfo.Find(id);
+
+                return bi;   
+            }
 
             //return new
             //{
@@ -77,22 +73,22 @@ namespace API
         }
 
         public ContactInfo GetContactInfo(int id)
-        {           
-           using( var db = new fynbusprojektEntities())
-           {
-               object contactInfo = db.ContactInfo.Find(id);
+        {
+            using (var db = new fynbusprojektEntities())
+            {
+                var contactInfo = db.ContactInfo.Find(id);
 
-               return contactInfo as ContactInfo;
-           }
+                return contactInfo;
+            }
         }
 
         public Documentation GetDocumentation(int id)
         {
             using (var db = new fynbusprojektEntities())
             {
-                object documentInfo = db.Documentation.Find(id);
+                var documentInfo = db.Documentation.Find(id);
 
-                return documentInfo as Documentation;
+                return documentInfo;
             }
         }
 
@@ -124,8 +120,6 @@ namespace API
             }
         }
 
-        [WebInvoke(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        [WebGet(RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         public BidInfo CreateBidInfo(BidInfo newBidInfo)
         {
             using (var db = new fynbusprojektEntities())
@@ -137,11 +131,11 @@ namespace API
                 var eq = new Equipment();
                 var contactInfo = new ContactInfo();
 
-                var newDbEntry = db.BidInfo.Add(bidInfo);
+                BidInfo newDbEntry = db.BidInfo.Add(newBidInfo);
 
                 db.SaveChanges();
 
-                var id = db.Entry(newDbEntry).Property(p => p.id).CurrentValue;
+                long id = db.Entry(newDbEntry).Property(p => p.id).CurrentValue;
 
                 if (db.BidInfo.Find(id) != null)
                 {
@@ -151,7 +145,7 @@ namespace API
                     eq.id = id;
                     contactInfo.id = id;
                 }
-                
+
                 //gem alle elementer
                 db.Documentation.Add(doc);
                 db.ExpandedBidInfo.Add(exp);
@@ -162,47 +156,99 @@ namespace API
                 db.SaveChanges();
 
                 BidInfo newlyCreatedEntry = db.Entry(newDbEntry).Entity;
-                
+
                 if (newlyCreatedEntry == null)
                 {
                     throw new Exception();
                 }
-                else
-                {
-                    return newlyCreatedEntry;
-                }               
-
+                return newlyCreatedEntry;
             }
         }
 
-        public void CreateContactInfo(ContactInfo newContactInfo)
+
+        public ContactInfo UpdateContactInfo(BidInfo bid, ContactInfo contact)
         {
-               //wolla!
+            using (var db = new fynbusprojektEntities())
+            {
+                BidInfo getBid = db.BidInfo.Find(bid.id);
+
+                if (getBid == null) return null;
+                contact.id = getBid.id;
+                db.ContactInfo.AddOrUpdate(contact);
+                db.SaveChanges();
+                return contact;
+            }
         }
 
-        public void CreateDocumentation(BidInfo newBid)
+        public Documentation UpdateDocumentation(BidInfo bid, Documentation doc)
         {
-            throw new NotImplementedException();
+            using (var db = new fynbusprojektEntities())
+            {
+                BidInfo getBid = db.BidInfo.Find(bid.id);
+
+                if (getBid == null) return null;
+                doc.id = getBid.id;
+                db.Documentation.AddOrUpdate(doc);
+                db.SaveChanges();
+                return doc;
+            }
         }
 
-        public object CreateEquipment(BidInfo newBid)
+        public Equipment UpdateEquipment(BidInfo bid, Equipment eq)
         {
-            throw new NotImplementedException();
+            using (var db = new fynbusprojektEntities())
+            {
+                BidInfo getBid = db.BidInfo.Find(bid.id);
+
+                if (getBid == null) return null;
+                eq.id = getBid.id;
+                db.Equipment.AddOrUpdate(eq);
+                db.SaveChanges();
+                return eq;
+            }
         }
 
-        public object CreateExpandedBifInfo(BidInfo newBid)
+        public ExpandedBidInfo UpdateExpandedBifInfo(BidInfo bid, ExpandedBidInfo exp)
         {
-            throw new NotImplementedException();
+            using (var db = new fynbusprojektEntities())
+            {
+                BidInfo getBid = db.BidInfo.Find(bid.id);
+
+                if (getBid == null) return null;
+                exp.id = getBid.id;
+                db.ExpandedBidInfo.AddOrUpdate(exp);
+                db.SaveChanges();
+                return exp;
+            }
         }
 
-        public object CreatePriceList(BidInfo newBid)
+        public PriceList UpdatePricelist(BidInfo bid, PriceList pl)
         {
-            throw new NotImplementedException();
+            using (var db = new fynbusprojektEntities())
+            {
+                BidInfo getBid = db.Entry(bid).Entity;
+                if (getBid != null)
+                {
+                    pl.id = getBid.id;
+                    db.PriceList.AddOrUpdate(pl);
+                    db.SaveChanges();
+                    return pl;
+                }
+                return null;
+            }
         }
 
-        public object UpdateBidInfo(object newBid)
+        public BidInfo UpdateBidInfo(BidInfo bid)
         {
-            throw new NotImplementedException();
+            using (var db = new fynbusprojektEntities())
+            {
+                var getBid = db.Entry(bid).Entity;
+
+                if (getBid == null || getBid.id != bid.id) return null;
+                db.BidInfo.AddOrUpdate(bid);
+                db.SaveChanges();
+                return db.BidInfo.Find(bid.id);
+            }
         }
     }
 }

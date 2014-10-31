@@ -26,7 +26,7 @@ namespace Model
         public System.DateTime LastEdit { get; set; }
         [DataMember]
         public int OfferNumber { get; set; }
-    
+        [DataMember]
         public virtual ContactInfo ContactInfo { get; set; }
         [DataMember]
         public virtual Documentation Documentation { get; set; }

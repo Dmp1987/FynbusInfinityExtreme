@@ -20,9 +20,9 @@
       <xs:element minOccurs="0" name="BidInfo" nillable="true" type="tns:BidInfo" />
       <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Kommune" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Postnummer" type="xs:int" />
+      <xs:element minOccurs="0" name="Postnummer" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="Vejnavn" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Vejnummer" type="xs:int" />
+      <xs:element minOccurs="0" name="Vejnummer" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="id" type="xs:long" />
     </xs:sequence>
   </xs:complexType>
@@ -45,14 +45,14 @@
   <xs:element name="Documentation" nillable="true" type="tns:Documentation" />
   <xs:complexType name="Equipment">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Barnestol_0_13kg" type="xs:boolean" />
-      <xs:element minOccurs="0" name="Barnestol_15_36kg" type="xs:boolean" />
-      <xs:element minOccurs="0" name="Barnestol_9_18kg" type="xs:boolean" />
-      <xs:element minOccurs="0" name="Barnestol_9_36kg" type="xs:boolean" />
-      <xs:element minOccurs="0" name="Barnestol_Integreret" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Barnestol_0_13kg" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Barnestol_15_36kg" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Barnestol_9_18kg" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Barnestol_9_36kg" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Barnestol_Integreret" nillable="true" type="xs:boolean" />
       <xs:element minOccurs="0" name="BidInfo" nillable="true" type="tns:BidInfo" />
-      <xs:element minOccurs="0" name="TrappeMaskine_120" type="xs:boolean" />
-      <xs:element minOccurs="0" name="TrappeMaskine_160" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TrappeMaskine_120" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TrappeMaskine_160" nillable="true" type="xs:boolean" />
       <xs:element minOccurs="0" name="id" type="xs:long" />
     </xs:sequence>
   </xs:complexType>
@@ -60,12 +60,12 @@
   <xs:complexType name="ExpandedBidInfo">
     <xs:sequence>
       <xs:element minOccurs="0" name="BidInfo" nillable="true" type="tns:BidInfo" />
-      <xs:element minOccurs="0" name="GarantiVognNummer" type="xs:int" />
-      <xs:element minOccurs="0" name="RegSerieNummer" type="xs:int" />
+      <xs:element minOccurs="0" name="GarantiVognNummer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RegSerieNummer" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="SecondaryOS" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TelefonNummer" type="xs:int" />
-      <xs:element minOccurs="0" name="VognType" type="xs:int" />
-      <xs:element minOccurs="0" name="VognloebsNummer" type="xs:int" />
+      <xs:element minOccurs="0" name="TelefonNummer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VognType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VognloebsNummer" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="id" type="xs:long" />
     </xs:sequence>
   </xs:complexType>
@@ -73,16 +73,16 @@
   <xs:complexType name="PriceList">
     <xs:sequence>
       <xs:element minOccurs="0" name="BidInfo" nillable="true" type="tns:BidInfo" />
-      <xs:element minOccurs="0" name="HverdagAftenNatKoersel" type="xs:int" />
-      <xs:element minOccurs="0" name="HverdagAftenNatOpstartsGebyr" type="xs:int" />
-      <xs:element minOccurs="0" name="HverdagAftenNatVentetid" type="xs:int" />
-      <xs:element minOccurs="0" name="HverdageKoersel" type="xs:int" />
-      <xs:element minOccurs="0" name="HverdageOpstartsGebyr" type="xs:int" />
-      <xs:element minOccurs="0" name="HverdageVenteTid" type="xs:int" />
-      <xs:element minOccurs="0" name="PrisPerLoeft_Trappemaskine" type="xs:int" />
-      <xs:element minOccurs="0" name="WeekendHelligdagKoersel" type="xs:int" />
-      <xs:element minOccurs="0" name="WeekendHelligdagOpstartsGebyr" type="xs:int" />
-      <xs:element minOccurs="0" name="WeekendHelligdagVentetid" type="xs:int" />
+      <xs:element minOccurs="0" name="HverdagAftenNatKoersel" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="HverdagAftenNatOpstartsGebyr" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="HverdagAftenNatVentetid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="HverdageKoersel" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="HverdageOpstartsGebyr" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="HverdageVenteTid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PrisPerLoeft_Trappemaskine" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WeekendHelligdagKoersel" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WeekendHelligdagOpstartsGebyr" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WeekendHelligdagVentetid" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="YderligInfo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="id" type="xs:long" />
     </xs:sequence>

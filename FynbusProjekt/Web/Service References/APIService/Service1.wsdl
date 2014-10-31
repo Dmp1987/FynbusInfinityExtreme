@@ -55,35 +55,35 @@
   <wsdl:message name="IService1_CreateBidInfo_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateBidInfoResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_CreateContactInfo_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateContactInfo" />
+  <wsdl:message name="IService1_UpdateContactInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContactInfo" />
   </wsdl:message>
-  <wsdl:message name="IService1_CreateContactInfo_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateContactInfoResponse" />
+  <wsdl:message name="IService1_UpdateContactInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateContactInfoResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_CreateDocumentation_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateDocumentation" />
+  <wsdl:message name="IService1_UpdateDocumentation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDocumentation" />
   </wsdl:message>
-  <wsdl:message name="IService1_CreateDocumentation_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateDocumentationResponse" />
+  <wsdl:message name="IService1_UpdateDocumentation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDocumentationResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_CreateEquipment_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateEquipment" />
+  <wsdl:message name="IService1_UpdateEquipment_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEquipment" />
   </wsdl:message>
-  <wsdl:message name="IService1_CreateEquipment_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateEquipmentResponse" />
+  <wsdl:message name="IService1_UpdateEquipment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEquipmentResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_CreateExpandedBifInfo_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateExpandedBifInfo" />
+  <wsdl:message name="IService1_UpdateExpandedBifInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExpandedBifInfo" />
   </wsdl:message>
-  <wsdl:message name="IService1_CreateExpandedBifInfo_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateExpandedBifInfoResponse" />
+  <wsdl:message name="IService1_UpdateExpandedBifInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExpandedBifInfoResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_CreatePriceList_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreatePriceList" />
+  <wsdl:message name="IService1_UpdatePricelist_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePricelist" />
   </wsdl:message>
-  <wsdl:message name="IService1_CreatePriceList_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreatePriceListResponse" />
+  <wsdl:message name="IService1_UpdatePricelist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePricelistResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_UpdateBidInfo_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateBidInfo" />
@@ -124,25 +124,25 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateBidInfo" message="tns:IService1_CreateBidInfo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateBidInfoResponse" message="tns:IService1_CreateBidInfo_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="CreateContactInfo">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateContactInfo" message="tns:IService1_CreateContactInfo_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateContactInfoResponse" message="tns:IService1_CreateContactInfo_OutputMessage" />
+    <wsdl:operation name="UpdateContactInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateContactInfo" message="tns:IService1_UpdateContactInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateContactInfoResponse" message="tns:IService1_UpdateContactInfo_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="CreateDocumentation">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateDocumentation" message="tns:IService1_CreateDocumentation_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateDocumentationResponse" message="tns:IService1_CreateDocumentation_OutputMessage" />
+    <wsdl:operation name="UpdateDocumentation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateDocumentation" message="tns:IService1_UpdateDocumentation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateDocumentationResponse" message="tns:IService1_UpdateDocumentation_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="CreateEquipment">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateEquipment" message="tns:IService1_CreateEquipment_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateEquipmentResponse" message="tns:IService1_CreateEquipment_OutputMessage" />
+    <wsdl:operation name="UpdateEquipment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateEquipment" message="tns:IService1_UpdateEquipment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateEquipmentResponse" message="tns:IService1_UpdateEquipment_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="CreateExpandedBifInfo">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateExpandedBifInfo" message="tns:IService1_CreateExpandedBifInfo_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateExpandedBifInfoResponse" message="tns:IService1_CreateExpandedBifInfo_OutputMessage" />
+    <wsdl:operation name="UpdateExpandedBifInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateExpandedBifInfo" message="tns:IService1_UpdateExpandedBifInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateExpandedBifInfoResponse" message="tns:IService1_UpdateExpandedBifInfo_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="CreatePriceList">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreatePriceList" message="tns:IService1_CreatePriceList_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreatePriceListResponse" message="tns:IService1_CreatePriceList_OutputMessage" />
+    <wsdl:operation name="UpdatePricelist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdatePricelist" message="tns:IService1_UpdatePricelist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdatePricelistResponse" message="tns:IService1_UpdatePricelist_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateBidInfo">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateBidInfo" message="tns:IService1_UpdateBidInfo_InputMessage" />
@@ -223,8 +223,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateContactInfo">
-      <soap:operation soapAction="http://tempuri.org/IService1/CreateContactInfo" style="document" />
+    <wsdl:operation name="UpdateContactInfo">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateContactInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -232,8 +232,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateDocumentation">
-      <soap:operation soapAction="http://tempuri.org/IService1/CreateDocumentation" style="document" />
+    <wsdl:operation name="UpdateDocumentation">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateDocumentation" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -241,8 +241,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateEquipment">
-      <soap:operation soapAction="http://tempuri.org/IService1/CreateEquipment" style="document" />
+    <wsdl:operation name="UpdateEquipment">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateEquipment" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -250,8 +250,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreateExpandedBifInfo">
-      <soap:operation soapAction="http://tempuri.org/IService1/CreateExpandedBifInfo" style="document" />
+    <wsdl:operation name="UpdateExpandedBifInfo">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateExpandedBifInfo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -259,8 +259,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CreatePriceList">
-      <soap:operation soapAction="http://tempuri.org/IService1/CreatePriceList" style="document" />
+    <wsdl:operation name="UpdatePricelist">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdatePricelist" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
