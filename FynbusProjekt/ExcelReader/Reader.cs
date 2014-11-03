@@ -1,64 +1,62 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ExcelReader
 {
     public static class Reader
     {
-        private static string ConnectionString;
+        private static string _connectionString;
 
-        static void ImportExcelController()
+        private static void ImportExcelController()
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
-            ofd.ShowDialog();
 
-            string fileName = ofd.FileName;
-
-            ConnectionString =
-                "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + fileName +
-                ";Extended Properties=\"Excel 8.0;HDR=Yes;IMEX=1\";OLE DB Services = -2;";
+            //_connectionString =
+            //    "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + fileName +
+            //    ";Extended Properties=\"Excel 8.0;HDR=Yes;IMEX=1\";OLE DB Services = -2;";
             //or "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=c:\myFolder\myExcel2007file.xlsx; Extended Properties = "Excel 12.0 Xml;HDR=YES";";
         }
 
         [SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
         public static void ReadFromExcel(string excelFilePath)
         {
-            DataSet ds = new DataSet();
+            var ds = new DataSet();
 
-            using (OleDbConnection conn = new OleDbConnection(ConnectionString))
+            _connectionString =
+                "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + excelFilePath +
+                ";Extended Properties=\"Excel 8.0;HDR=Yes;IMEX=1\";OLE DB Services = -2;";
+
+            using (var conn = new OleDbConnection(_connectionString))
             {
                 conn.Open();
-                OleDbCommand cmd = new OleDbCommand { Connection = conn };
+                var cmd = new OleDbCommand {Connection = conn};
 
                 DataTable excelSchema = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+
+                int count = 0;
+
                 if (excelSchema != null)
                     foreach (DataRow row in excelSchema.Rows)
                     {
+                        count++;
                         try
                         {
-                            string sheetName = row["TABLE_NAME"].ToString();
-                            cmd.CommandText = "SELECT * FROM [" + sheetName + "]";
-                            DataTable dt = new DataTable { TableName = sheetName };
-                            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
-                            da.Fill(dt);
-                            ds.Tables.Add(dt);
-
+                            if (row["TABLE_NAME"].ToString().Contains("$") && count >= 8)
+                            {
+                                string sheetName = row["TABLE_NAME"].ToString();
+                                cmd.CommandText = "SELECT * FROM [" + sheetName + "]";
+                                var dt = new DataTable { TableName = sheetName };
+                                var da = new OleDbDataAdapter(cmd);
+                                da.Fill(dt);
+                                ds.Tables.Add(dt);
+                            }
+                            
                         }
                         catch (Exception)
                         {
-                         
                         }
-                        
-                        
                     }
                 /*
                                 cmd = null;
@@ -69,26 +67,28 @@ namespace ExcelReader
                 {
                     foreach (DataRow row in table.Rows)
                     {
-                        DateTime firstContact;
-                        DateTime.TryParse(row["Første kontakt"].ToString(), out firstContact);
 
-                        DateTime? lastContact;
-                        if (row["Seneste kontakt"] != null && row["Seneste kontakt"].ToString().Length > 1)
-                        {
-                            lastContact = DateTime.Parse(row["Seneste kontakt"].ToString());
-                        }
-                        else
-                        {
-                            lastContact = null;
-                        }
+                        var test = row["Merge nr"].ToString();
+                        //DateTime firstContact;
+                        //DateTime.TryParse(row["Første kontakt"].ToString(), out firstContact);
 
-                        string phone = "";
+                        //DateTime? lastContact;
+                        //if (row["Seneste kontakt"] != null && row["Seneste kontakt"].ToString().Length > 1)
+                        //{
+                        //    lastContact = DateTime.Parse(row["Seneste kontakt"].ToString());
+                        //}
+                        //else
+                        //{
+                        //    lastContact = null;
+                        //}
 
-                        if (row["Telefon"] != null && row["Telefon"].ToString().Length > 1)
-                        {
-                            phone = row["Telefon"].ToString();
-                        }
-            
+                        //string phone = "";
+
+                        //if (row["Telefon"] != null && row["Telefon"].ToString().Length > 1)
+                        //{
+                        //    phone = row["Telefon"].ToString();
+                        //}
+
                         //Company company = new Company
                         //{
                         //    Name = row["Firma"].ToString(),
@@ -102,7 +102,6 @@ namespace ExcelReader
                         ////CompanyController.StaticAddCompany(company);
 
                         //yield return company;
-
                     }
                 }
             }
