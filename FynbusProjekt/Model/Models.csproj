@@ -71,7 +71,6 @@
     <Compile Include="Equipment.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="ExcelFactory.cs" />
     <Compile Include="ExpandedBidInfo.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>

@@ -207,6 +207,7 @@
     <Content Include="Images\orderedList9.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="ImportFromExcel.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="Content\bootstrap.css.map" />
@@ -374,12 +375,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="createoffer.aspx.cs">
       <DependentUpon>createoffer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="createoffer.aspx.designer.cs">
       <DependentUpon>createoffer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ImportFromExcel.aspx.cs">
+      <DependentUpon>ImportFromExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImportFromExcel.aspx.designer.cs">
+      <DependentUpon>ImportFromExcel.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -425,6 +434,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />
@@ -437,6 +447,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\APIService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExcelReader\ExcelReader.csproj">
+      <Project>{4bb01331-76f9-4e01-a29c-cb8b947a91fc}</Project>
+      <Name>ExcelReader</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
