@@ -7,26 +7,42 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Runtime.Serialization;
+
 namespace Model
 {
     using System;
     using System.Collections.Generic;
     
+    [DataContract]
     public partial class PriceList
     {
+        [DataMember]
         public long id { get; set; }
+        [DataMember]
         public Nullable<int> HverdagAftenNatKoersel { get; set; }
+        [DataMember]
         public Nullable<int> HverdagAftenNatOpstartsGebyr { get; set; }
+        [DataMember]
         public Nullable<int> HverdagAftenNatVentetid { get; set; }
+        [DataMember]
         public Nullable<int> HverdageKoersel { get; set; }
+        [DataMember]
         public Nullable<int> HverdageOpstartsGebyr { get; set; }
+        [DataMember]
         public Nullable<int> HverdageVenteTid { get; set; }
+        [DataMember]
         public Nullable<int> PrisPerLoeft_Trappemaskine { get; set; }
+        [DataMember]
         public Nullable<int> WeekendHelligdagKoersel { get; set; }
+        [DataMember]
         public Nullable<int> WeekendHelligdagOpstartsGebyr { get; set; }
+        [DataMember]
         public Nullable<int> WeekendHelligdagVentetid { get; set; }
+        [DataMember]
         public string YderligInfo { get; set; }
-    
+
+        [DataMember]
         public virtual BidInfo BidInfo { get; set; }
     }
 }

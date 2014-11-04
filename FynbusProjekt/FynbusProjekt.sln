@@ -22,6 +22,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{636629
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelReader", "ExcelReader\ExcelReader.csproj", "{4BB01331-76F9-4E01-A29C-CB8B947A91FC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3918B030-CB9E-444F-8D79-DD5F51B39B55} = {3918B030-CB9E-444F-8D79-DD5F51B39B55}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

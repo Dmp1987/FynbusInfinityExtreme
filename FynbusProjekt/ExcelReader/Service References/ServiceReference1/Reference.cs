@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Web.APIService {
+namespace ExcelReader.ServiceReference1 {
     using System.Runtime.Serialization;
     using System;
     
@@ -29,16 +29,16 @@ namespace Web.APIService {
         private int CVRField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Web.APIService.ContactInfo ContactInfoField;
+        private ExcelReader.ServiceReference1.ContactInfo ContactInfoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Web.APIService.Documentation DocumentationField;
+        private ExcelReader.ServiceReference1.Documentation DocumentationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Web.APIService.Equipment EquipmentField;
+        private ExcelReader.ServiceReference1.Equipment EquipmentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Web.APIService.ExpandedBidInfo ExpandedBidInfoField;
+        private ExcelReader.ServiceReference1.ExpandedBidInfo ExpandedBidInfoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime LastEditField;
@@ -47,7 +47,7 @@ namespace Web.APIService {
         private int OfferNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Web.APIService.PriceList PriceListField;
+        private ExcelReader.ServiceReference1.PriceList PriceListField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long idField;
@@ -89,7 +89,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Web.APIService.ContactInfo ContactInfo {
+        public ExcelReader.ServiceReference1.ContactInfo ContactInfo {
             get {
                 return this.ContactInfoField;
             }
@@ -102,7 +102,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Web.APIService.Documentation Documentation {
+        public ExcelReader.ServiceReference1.Documentation Documentation {
             get {
                 return this.DocumentationField;
             }
@@ -115,7 +115,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Web.APIService.Equipment Equipment {
+        public ExcelReader.ServiceReference1.Equipment Equipment {
             get {
                 return this.EquipmentField;
             }
@@ -128,7 +128,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Web.APIService.ExpandedBidInfo ExpandedBidInfo {
+        public ExcelReader.ServiceReference1.ExpandedBidInfo ExpandedBidInfo {
             get {
                 return this.ExpandedBidInfoField;
             }
@@ -167,7 +167,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Web.APIService.PriceList PriceList {
+        public ExcelReader.ServiceReference1.PriceList PriceList {
             get {
                 return this.PriceListField;
             }
@@ -212,7 +212,7 @@ namespace Web.APIService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Web.APIService.BidInfo BidInfoField;
+        private ExcelReader.ServiceReference1.BidInfo BidInfoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CityField;
@@ -243,7 +243,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Web.APIService.BidInfo BidInfo {
+        public ExcelReader.ServiceReference1.BidInfo BidInfo {
             get {
                 return this.BidInfoField;
             }
@@ -353,7 +353,7 @@ namespace Web.APIService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Web.APIService.BidInfo BidInfoField;
+        private ExcelReader.ServiceReference1.BidInfo BidInfoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> DatoForRegistreringField;
@@ -396,7 +396,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Web.APIService.BidInfo BidInfo {
+        public ExcelReader.ServiceReference1.BidInfo BidInfo {
             get {
                 return this.BidInfoField;
             }
@@ -573,7 +573,7 @@ namespace Web.APIService {
         private System.Nullable<bool> Barnestol_IntegreretField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Web.APIService.BidInfo BidInfoField;
+        private ExcelReader.ServiceReference1.BidInfo BidInfoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> TrappeMaskine_120Field;
@@ -660,7 +660,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Web.APIService.BidInfo BidInfo {
+        public ExcelReader.ServiceReference1.BidInfo BidInfo {
             get {
                 return this.BidInfoField;
             }
@@ -731,7 +731,7 @@ namespace Web.APIService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Web.APIService.BidInfo BidInfoField;
+        private ExcelReader.ServiceReference1.BidInfo BidInfoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> GarantiVognNummerField;
@@ -765,7 +765,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Web.APIService.BidInfo BidInfo {
+        public ExcelReader.ServiceReference1.BidInfo BidInfo {
             get {
                 return this.BidInfoField;
             }
@@ -888,7 +888,7 @@ namespace Web.APIService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Web.APIService.BidInfo BidInfoField;
+        private ExcelReader.ServiceReference1.BidInfo BidInfoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> HverdagAftenNatKoerselField;
@@ -937,7 +937,7 @@ namespace Web.APIService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Web.APIService.BidInfo BidInfo {
+        public ExcelReader.ServiceReference1.BidInfo BidInfo {
             get {
                 return this.BidInfoField;
             }
@@ -1116,7 +1116,7 @@ namespace Web.APIService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="APIService.IService1")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetName", ReplyAction="http://tempuri.org/IService1/GetNameResponse")]
@@ -1126,90 +1126,90 @@ namespace Web.APIService {
         System.Threading.Tasks.Task<string> GetNameAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBidinfo", ReplyAction="http://tempuri.org/IService1/GetBidinfoResponse")]
-        Web.APIService.BidInfo GetBidinfo(int id);
+        ExcelReader.ServiceReference1.BidInfo GetBidinfo(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBidinfo", ReplyAction="http://tempuri.org/IService1/GetBidinfoResponse")]
-        System.Threading.Tasks.Task<Web.APIService.BidInfo> GetBidinfoAsync(int id);
+        System.Threading.Tasks.Task<ExcelReader.ServiceReference1.BidInfo> GetBidinfoAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetContactInfo", ReplyAction="http://tempuri.org/IService1/GetContactInfoResponse")]
-        Web.APIService.ContactInfo GetContactInfo(int id);
+        ExcelReader.ServiceReference1.ContactInfo GetContactInfo(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetContactInfo", ReplyAction="http://tempuri.org/IService1/GetContactInfoResponse")]
-        System.Threading.Tasks.Task<Web.APIService.ContactInfo> GetContactInfoAsync(int id);
+        System.Threading.Tasks.Task<ExcelReader.ServiceReference1.ContactInfo> GetContactInfoAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDocumentation", ReplyAction="http://tempuri.org/IService1/GetDocumentationResponse")]
-        Web.APIService.Documentation GetDocumentation(int id);
+        ExcelReader.ServiceReference1.Documentation GetDocumentation(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDocumentation", ReplyAction="http://tempuri.org/IService1/GetDocumentationResponse")]
-        System.Threading.Tasks.Task<Web.APIService.Documentation> GetDocumentationAsync(int id);
+        System.Threading.Tasks.Task<ExcelReader.ServiceReference1.Documentation> GetDocumentationAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetEquipment", ReplyAction="http://tempuri.org/IService1/GetEquipmentResponse")]
-        Web.APIService.Equipment GetEquipment(int id);
+        ExcelReader.ServiceReference1.Equipment GetEquipment(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetEquipment", ReplyAction="http://tempuri.org/IService1/GetEquipmentResponse")]
-        System.Threading.Tasks.Task<Web.APIService.Equipment> GetEquipmentAsync(int id);
+        System.Threading.Tasks.Task<ExcelReader.ServiceReference1.Equipment> GetEquipmentAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetExpandedBifInfo", ReplyAction="http://tempuri.org/IService1/GetExpandedBifInfoResponse")]
-        Web.APIService.ExpandedBidInfo GetExpandedBifInfo(int id);
+        ExcelReader.ServiceReference1.ExpandedBidInfo GetExpandedBifInfo(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetExpandedBifInfo", ReplyAction="http://tempuri.org/IService1/GetExpandedBifInfoResponse")]
-        System.Threading.Tasks.Task<Web.APIService.ExpandedBidInfo> GetExpandedBifInfoAsync(int id);
+        System.Threading.Tasks.Task<ExcelReader.ServiceReference1.ExpandedBidInfo> GetExpandedBifInfoAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetPriceList", ReplyAction="http://tempuri.org/IService1/GetPriceListResponse")]
-        Web.APIService.PriceList GetPriceList(int id);
+        ExcelReader.ServiceReference1.PriceList GetPriceList(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetPriceList", ReplyAction="http://tempuri.org/IService1/GetPriceListResponse")]
-        System.Threading.Tasks.Task<Web.APIService.PriceList> GetPriceListAsync(int id);
+        System.Threading.Tasks.Task<ExcelReader.ServiceReference1.PriceList> GetPriceListAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateBidInfo", ReplyAction="http://tempuri.org/IService1/CreateBidInfoResponse")]
-        Web.APIService.BidInfo CreateBidInfo(Web.APIService.BidInfo newBidInfo);
+        ExcelReader.ServiceReference1.BidInfo CreateBidInfo(ExcelReader.ServiceReference1.BidInfo newBidInfo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateBidInfo", ReplyAction="http://tempuri.org/IService1/CreateBidInfoResponse")]
-        System.Threading.Tasks.Task<Web.APIService.BidInfo> CreateBidInfoAsync(Web.APIService.BidInfo newBidInfo);
+        System.Threading.Tasks.Task<ExcelReader.ServiceReference1.BidInfo> CreateBidInfoAsync(ExcelReader.ServiceReference1.BidInfo newBidInfo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateContactInfo", ReplyAction="http://tempuri.org/IService1/UpdateContactInfoResponse")]
-        Web.APIService.ContactInfo UpdateContactInfo(Web.APIService.BidInfo bid, Web.APIService.ContactInfo contact);
+        ExcelReader.ServiceReference1.ContactInfo UpdateContactInfo(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.ContactInfo contact);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateContactInfo", ReplyAction="http://tempuri.org/IService1/UpdateContactInfoResponse")]
-        System.Threading.Tasks.Task<Web.APIService.ContactInfo> UpdateContactInfoAsync(Web.APIService.BidInfo bid, Web.APIService.ContactInfo contact);
+        System.Threading.Tasks.Task<ExcelReader.ServiceReference1.ContactInfo> UpdateContactInfoAsync(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.ContactInfo contact);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDocumentation", ReplyAction="http://tempuri.org/IService1/UpdateDocumentationResponse")]
-        Web.APIService.Documentation UpdateDocumentation(Web.APIService.BidInfo bid, Web.APIService.Documentation doc);
+        ExcelReader.ServiceReference1.Documentation UpdateDocumentation(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.Documentation doc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateDocumentation", ReplyAction="http://tempuri.org/IService1/UpdateDocumentationResponse")]
-        System.Threading.Tasks.Task<Web.APIService.Documentation> UpdateDocumentationAsync(Web.APIService.BidInfo bid, Web.APIService.Documentation doc);
+        System.Threading.Tasks.Task<ExcelReader.ServiceReference1.Documentation> UpdateDocumentationAsync(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.Documentation doc);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateEquipment", ReplyAction="http://tempuri.org/IService1/UpdateEquipmentResponse")]
-        Web.APIService.Equipment UpdateEquipment(Web.APIService.BidInfo bid, Web.APIService.Equipment eq);
+        ExcelReader.ServiceReference1.Equipment UpdateEquipment(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.Equipment eq);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateEquipment", ReplyAction="http://tempuri.org/IService1/UpdateEquipmentResponse")]
-        System.Threading.Tasks.Task<Web.APIService.Equipment> UpdateEquipmentAsync(Web.APIService.BidInfo bid, Web.APIService.Equipment eq);
+        System.Threading.Tasks.Task<ExcelReader.ServiceReference1.Equipment> UpdateEquipmentAsync(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.Equipment eq);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateExpandedBifInfo", ReplyAction="http://tempuri.org/IService1/UpdateExpandedBifInfoResponse")]
-        Web.APIService.ExpandedBidInfo UpdateExpandedBifInfo(Web.APIService.BidInfo bid, Web.APIService.ExpandedBidInfo exp);
+        ExcelReader.ServiceReference1.ExpandedBidInfo UpdateExpandedBifInfo(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.ExpandedBidInfo exp);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateExpandedBifInfo", ReplyAction="http://tempuri.org/IService1/UpdateExpandedBifInfoResponse")]
-        System.Threading.Tasks.Task<Web.APIService.ExpandedBidInfo> UpdateExpandedBifInfoAsync(Web.APIService.BidInfo bid, Web.APIService.ExpandedBidInfo exp);
+        System.Threading.Tasks.Task<ExcelReader.ServiceReference1.ExpandedBidInfo> UpdateExpandedBifInfoAsync(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.ExpandedBidInfo exp);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdatePricelist", ReplyAction="http://tempuri.org/IService1/UpdatePricelistResponse")]
-        Web.APIService.PriceList UpdatePricelist(Web.APIService.BidInfo bid, Web.APIService.PriceList pl);
+        ExcelReader.ServiceReference1.PriceList UpdatePricelist(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.PriceList pl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdatePricelist", ReplyAction="http://tempuri.org/IService1/UpdatePricelistResponse")]
-        System.Threading.Tasks.Task<Web.APIService.PriceList> UpdatePricelistAsync(Web.APIService.BidInfo bid, Web.APIService.PriceList pl);
+        System.Threading.Tasks.Task<ExcelReader.ServiceReference1.PriceList> UpdatePricelistAsync(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.PriceList pl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateBidInfo", ReplyAction="http://tempuri.org/IService1/UpdateBidInfoResponse")]
-        Web.APIService.BidInfo UpdateBidInfo(Web.APIService.BidInfo bid);
+        ExcelReader.ServiceReference1.BidInfo UpdateBidInfo(ExcelReader.ServiceReference1.BidInfo bid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateBidInfo", ReplyAction="http://tempuri.org/IService1/UpdateBidInfoResponse")]
-        System.Threading.Tasks.Task<Web.APIService.BidInfo> UpdateBidInfoAsync(Web.APIService.BidInfo bid);
+        System.Threading.Tasks.Task<ExcelReader.ServiceReference1.BidInfo> UpdateBidInfoAsync(ExcelReader.ServiceReference1.BidInfo bid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/importExcel", ReplyAction="http://tempuri.org/IService1/importExcelResponse")]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.BidInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ContactInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Documentation))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.Equipment))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.ExpandedBidInfo))]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Web.APIService.PriceList))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcelReader.ServiceReference1.BidInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcelReader.ServiceReference1.ContactInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcelReader.ServiceReference1.Documentation))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcelReader.ServiceReference1.Equipment))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcelReader.ServiceReference1.ExpandedBidInfo))]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(ExcelReader.ServiceReference1.PriceList))]
         object importExcel(object ExcelDocument);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/importExcel", ReplyAction="http://tempuri.org/IService1/importExcelResponse")]
@@ -1217,12 +1217,12 @@ namespace Web.APIService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : Web.APIService.IService1, System.ServiceModel.IClientChannel {
+    public interface IService1Channel : ExcelReader.ServiceReference1.IService1, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<Web.APIService.IService1>, Web.APIService.IService1 {
+    public partial class Service1Client : System.ServiceModel.ClientBase<ExcelReader.ServiceReference1.IService1>, ExcelReader.ServiceReference1.IService1 {
         
         public Service1Client() {
         }
@@ -1251,107 +1251,107 @@ namespace Web.APIService {
             return base.Channel.GetNameAsync(id);
         }
         
-        public Web.APIService.BidInfo GetBidinfo(int id) {
+        public ExcelReader.ServiceReference1.BidInfo GetBidinfo(int id) {
             return base.Channel.GetBidinfo(id);
         }
         
-        public System.Threading.Tasks.Task<Web.APIService.BidInfo> GetBidinfoAsync(int id) {
+        public System.Threading.Tasks.Task<ExcelReader.ServiceReference1.BidInfo> GetBidinfoAsync(int id) {
             return base.Channel.GetBidinfoAsync(id);
         }
         
-        public Web.APIService.ContactInfo GetContactInfo(int id) {
+        public ExcelReader.ServiceReference1.ContactInfo GetContactInfo(int id) {
             return base.Channel.GetContactInfo(id);
         }
         
-        public System.Threading.Tasks.Task<Web.APIService.ContactInfo> GetContactInfoAsync(int id) {
+        public System.Threading.Tasks.Task<ExcelReader.ServiceReference1.ContactInfo> GetContactInfoAsync(int id) {
             return base.Channel.GetContactInfoAsync(id);
         }
         
-        public Web.APIService.Documentation GetDocumentation(int id) {
+        public ExcelReader.ServiceReference1.Documentation GetDocumentation(int id) {
             return base.Channel.GetDocumentation(id);
         }
         
-        public System.Threading.Tasks.Task<Web.APIService.Documentation> GetDocumentationAsync(int id) {
+        public System.Threading.Tasks.Task<ExcelReader.ServiceReference1.Documentation> GetDocumentationAsync(int id) {
             return base.Channel.GetDocumentationAsync(id);
         }
         
-        public Web.APIService.Equipment GetEquipment(int id) {
+        public ExcelReader.ServiceReference1.Equipment GetEquipment(int id) {
             return base.Channel.GetEquipment(id);
         }
         
-        public System.Threading.Tasks.Task<Web.APIService.Equipment> GetEquipmentAsync(int id) {
+        public System.Threading.Tasks.Task<ExcelReader.ServiceReference1.Equipment> GetEquipmentAsync(int id) {
             return base.Channel.GetEquipmentAsync(id);
         }
         
-        public Web.APIService.ExpandedBidInfo GetExpandedBifInfo(int id) {
+        public ExcelReader.ServiceReference1.ExpandedBidInfo GetExpandedBifInfo(int id) {
             return base.Channel.GetExpandedBifInfo(id);
         }
         
-        public System.Threading.Tasks.Task<Web.APIService.ExpandedBidInfo> GetExpandedBifInfoAsync(int id) {
+        public System.Threading.Tasks.Task<ExcelReader.ServiceReference1.ExpandedBidInfo> GetExpandedBifInfoAsync(int id) {
             return base.Channel.GetExpandedBifInfoAsync(id);
         }
         
-        public Web.APIService.PriceList GetPriceList(int id) {
+        public ExcelReader.ServiceReference1.PriceList GetPriceList(int id) {
             return base.Channel.GetPriceList(id);
         }
         
-        public System.Threading.Tasks.Task<Web.APIService.PriceList> GetPriceListAsync(int id) {
+        public System.Threading.Tasks.Task<ExcelReader.ServiceReference1.PriceList> GetPriceListAsync(int id) {
             return base.Channel.GetPriceListAsync(id);
         }
         
-        public Web.APIService.BidInfo CreateBidInfo(Web.APIService.BidInfo newBidInfo) {
+        public ExcelReader.ServiceReference1.BidInfo CreateBidInfo(ExcelReader.ServiceReference1.BidInfo newBidInfo) {
             return base.Channel.CreateBidInfo(newBidInfo);
         }
         
-        public System.Threading.Tasks.Task<Web.APIService.BidInfo> CreateBidInfoAsync(Web.APIService.BidInfo newBidInfo) {
+        public System.Threading.Tasks.Task<ExcelReader.ServiceReference1.BidInfo> CreateBidInfoAsync(ExcelReader.ServiceReference1.BidInfo newBidInfo) {
             return base.Channel.CreateBidInfoAsync(newBidInfo);
         }
         
-        public Web.APIService.ContactInfo UpdateContactInfo(Web.APIService.BidInfo bid, Web.APIService.ContactInfo contact) {
+        public ExcelReader.ServiceReference1.ContactInfo UpdateContactInfo(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.ContactInfo contact) {
             return base.Channel.UpdateContactInfo(bid, contact);
         }
         
-        public System.Threading.Tasks.Task<Web.APIService.ContactInfo> UpdateContactInfoAsync(Web.APIService.BidInfo bid, Web.APIService.ContactInfo contact) {
+        public System.Threading.Tasks.Task<ExcelReader.ServiceReference1.ContactInfo> UpdateContactInfoAsync(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.ContactInfo contact) {
             return base.Channel.UpdateContactInfoAsync(bid, contact);
         }
         
-        public Web.APIService.Documentation UpdateDocumentation(Web.APIService.BidInfo bid, Web.APIService.Documentation doc) {
+        public ExcelReader.ServiceReference1.Documentation UpdateDocumentation(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.Documentation doc) {
             return base.Channel.UpdateDocumentation(bid, doc);
         }
         
-        public System.Threading.Tasks.Task<Web.APIService.Documentation> UpdateDocumentationAsync(Web.APIService.BidInfo bid, Web.APIService.Documentation doc) {
+        public System.Threading.Tasks.Task<ExcelReader.ServiceReference1.Documentation> UpdateDocumentationAsync(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.Documentation doc) {
             return base.Channel.UpdateDocumentationAsync(bid, doc);
         }
         
-        public Web.APIService.Equipment UpdateEquipment(Web.APIService.BidInfo bid, Web.APIService.Equipment eq) {
+        public ExcelReader.ServiceReference1.Equipment UpdateEquipment(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.Equipment eq) {
             return base.Channel.UpdateEquipment(bid, eq);
         }
         
-        public System.Threading.Tasks.Task<Web.APIService.Equipment> UpdateEquipmentAsync(Web.APIService.BidInfo bid, Web.APIService.Equipment eq) {
+        public System.Threading.Tasks.Task<ExcelReader.ServiceReference1.Equipment> UpdateEquipmentAsync(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.Equipment eq) {
             return base.Channel.UpdateEquipmentAsync(bid, eq);
         }
         
-        public Web.APIService.ExpandedBidInfo UpdateExpandedBifInfo(Web.APIService.BidInfo bid, Web.APIService.ExpandedBidInfo exp) {
+        public ExcelReader.ServiceReference1.ExpandedBidInfo UpdateExpandedBifInfo(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.ExpandedBidInfo exp) {
             return base.Channel.UpdateExpandedBifInfo(bid, exp);
         }
         
-        public System.Threading.Tasks.Task<Web.APIService.ExpandedBidInfo> UpdateExpandedBifInfoAsync(Web.APIService.BidInfo bid, Web.APIService.ExpandedBidInfo exp) {
+        public System.Threading.Tasks.Task<ExcelReader.ServiceReference1.ExpandedBidInfo> UpdateExpandedBifInfoAsync(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.ExpandedBidInfo exp) {
             return base.Channel.UpdateExpandedBifInfoAsync(bid, exp);
         }
         
-        public Web.APIService.PriceList UpdatePricelist(Web.APIService.BidInfo bid, Web.APIService.PriceList pl) {
+        public ExcelReader.ServiceReference1.PriceList UpdatePricelist(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.PriceList pl) {
             return base.Channel.UpdatePricelist(bid, pl);
         }
         
-        public System.Threading.Tasks.Task<Web.APIService.PriceList> UpdatePricelistAsync(Web.APIService.BidInfo bid, Web.APIService.PriceList pl) {
+        public System.Threading.Tasks.Task<ExcelReader.ServiceReference1.PriceList> UpdatePricelistAsync(ExcelReader.ServiceReference1.BidInfo bid, ExcelReader.ServiceReference1.PriceList pl) {
             return base.Channel.UpdatePricelistAsync(bid, pl);
         }
         
-        public Web.APIService.BidInfo UpdateBidInfo(Web.APIService.BidInfo bid) {
+        public ExcelReader.ServiceReference1.BidInfo UpdateBidInfo(ExcelReader.ServiceReference1.BidInfo bid) {
             return base.Channel.UpdateBidInfo(bid);
         }
         
-        public System.Threading.Tasks.Task<Web.APIService.BidInfo> UpdateBidInfoAsync(Web.APIService.BidInfo bid) {
+        public System.Threading.Tasks.Task<ExcelReader.ServiceReference1.BidInfo> UpdateBidInfoAsync(ExcelReader.ServiceReference1.BidInfo bid) {
             return base.Channel.UpdateBidInfoAsync(bid);
         }
         

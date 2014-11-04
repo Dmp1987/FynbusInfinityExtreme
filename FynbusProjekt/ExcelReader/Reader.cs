@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
 using System.Diagnostics.CodeAnalysis;
-using System.Windows.Forms;
+using ExcelReader.ServiceReference1;
 
 namespace ExcelReader
 {
@@ -27,7 +29,7 @@ namespace ExcelReader
             _connectionString =
                 "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + excelFilePath +
                 ";Extended Properties=\"Excel 8.0;HDR=Yes;IMEX=1\";OLE DB Services = -2;";
-
+            var apiclient = new Service1Client();
             using (var conn = new OleDbConnection(_connectionString))
             {
                 conn.Open();
@@ -35,29 +37,30 @@ namespace ExcelReader
 
                 DataTable excelSchema = conn.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
 
-                int count = 0;
-
                 if (excelSchema != null)
-                    foreach (DataRow row in excelSchema.Rows)
-                    {
-                        count++;
-                        try
+                {
+                    
+                    int count = 0;
+
+                    if (excelSchema != null)
+                        foreach (DataRow row in excelSchema.Rows)
                         {
-                            if (row["TABLE_NAME"].ToString().Contains("$") && count >= 8)
+                            count++;
+                            try
                             {
-                                string sheetName = row["TABLE_NAME"].ToString();
-                                cmd.CommandText = "SELECT * FROM [" + sheetName + "]";
-                                var dt = new DataTable { TableName = sheetName };
-                                var da = new OleDbDataAdapter(cmd);
-                                da.Fill(dt);
-                                ds.Tables.Add(dt);
-                            }
+                                    string sheetName = row["TABLE_NAME"].ToString();
+                                    cmd.CommandText = "SELECT * FROM [" + sheetName + "A6:AG]";
+                                    var dt = new DataTable { TableName = sheetName };
+                                    var da = new OleDbDataAdapter(cmd);
+                                    da.Fill(dt);
+                                    ds.Tables.Add(dt);
                             
+                            }
+                            catch (Exception)
+                            {
+                            }
                         }
-                        catch (Exception)
-                        {
-                        }
-                    }
+                }
                 /*
                                 cmd = null;
                 */
@@ -67,8 +70,79 @@ namespace ExcelReader
                 {
                     foreach (DataRow row in table.Rows)
                     {
+                        int p;
+                        bool b;
+                        var bidinfo = new BidInfo()
+                        {
+                            BidderName = row["Byders (firma)navn"].ToString(),
+                            CVR = int.Parse(row["CVR-nr#"].ToString()),
+                            LastEdit = DateTime.Now
+                        };
+                        
+                        var savedNewBid = apiclient.CreateBidInfo(bidinfo);
 
-                        var test = row["Merge nr"].ToString();
+                        var docu = new Documentation()
+                        {
+                            RegistreringsNummer = row["Registreringsnr#"].ToString(),
+
+                        };
+
+                        apiclient.UpdateDocumentation(savedNewBid, docu);
+
+                        var exp = new ExpandedBidInfo()
+                        {
+                            GarantiVognNummer =
+                                int.TryParse(row["Evt. Garanti-vogn nummer:"].ToString(), out p) ? p : (int?) null,
+                            SecondaryOS = row["Evt. sekundært firma"].ToString(),
+                            VognloebsNummer = int.TryParse(row["Vognløbs-nummer:"].ToString(), out p) ? p : (int?) null,
+                            TelefonNummer = int.TryParse(row["Kommuni-kation til Planet / Telefon-nummer"].ToString(), out p) ? p : (int?) null,
+                            VognType = int.TryParse(row["Vogn-type"].ToString(), out p) ? p : (int?) null
+                        };
+
+                        apiclient.UpdateExpandedBifInfo(savedNewBid, exp);
+
+                        var eq = new Equipment()
+                        {
+                            Barnestol_0_13kg =
+                                bool.TryParse(row["Barne-stole / 0 - 13 kg."].ToString(), out b) ? b : (bool?) null,
+                            Barnestol_9_18kg = bool.TryParse(row["Barne-stole / 9 - 18 kg."].ToString(), out b) ? b : (bool?) null,
+                            Barnestol_9_36kg = bool.TryParse(row["Barne.stole / 9 - 36 kg."].ToString(), out b) ? b : (bool?)null,
+                            Barnestol_15_36kg = bool.TryParse(row["Barne-stole / 15 - 36 kg."].ToString(), out b) ? b : (bool?)null,
+                            Barnestol_Integreret = bool.TryParse(row["Barne-stole / Integreret i sæde"].ToString(), out b) ? b : (bool?)null,
+                            TrappeMaskine_120 = bool.TryParse(row["Trappe-maskine / 120 kg."].ToString(), out b) ? b : (bool?)null,
+                            TrappeMaskine_160 = bool.TryParse(row["Trappe-maskine / 160 kg."].ToString(), out b) ? b : (bool?)null
+                        };
+
+                        apiclient.UpdateEquipment(savedNewBid, eq);
+
+                        var contact = new ContactInfo()
+                        {
+                            City = row["Hjemsted By"].ToString(),
+                            Kommune = row["Hjem-sted Kom-mune"].ToString(),
+                            Postnummer = int.TryParse(row["Hjem-sted Post-nummer"].ToString(), out p) ? p : (int?)null,
+                            Vejnavn = row["Hjemsted vejnavn"].ToString(),
+                            Vejnummer = int.TryParse(row["Hjem-sted vej-nummer"].ToString(), out p) ? p : (int?)null,
+                        };
+
+                        apiclient.UpdateContactInfo(savedNewBid, contact);
+
+                        var priceList = new PriceList()
+                        {
+                            HverdagAftenNatKoersel = int.TryParse(row["Timepris for køretid (hverdage aften/nat)"].ToString(), out p) ? p : (int?)null,
+                            HverdagAftenNatOpstartsGebyr = int.TryParse(row["Opstartsgebyr (hverdage aften/nat)"].ToString(), out p) ? p : (int?)null,
+                            HverdagAftenNatVentetid = int.TryParse(row["Timepris for ventetid (hverdage aften/nat)"].ToString(), out p) ? p : (int?)null,
+                            HverdageKoersel = int.TryParse(row["Opstartsgebyr (hverdage aften/nat)"].ToString(), out p) ? p : (int?)null,
+                            HverdageOpstartsGebyr = int.TryParse(row["Opstartsgebyr (hverdage)"].ToString(), out p) ? p : (int?)null,
+                            HverdageVenteTid = int.TryParse(row["Timepris ventetid (hverdage):"].ToString(), out p) ? p : (int?)null,
+                            PrisPerLoeft_Trappemaskine = int.TryParse(row["Pris pr. løft med trappemaskine"].ToString(), out p) ? p : (int?)null,
+                            WeekendHelligdagKoersel = int.TryParse(row["Timepris køretid (weekender/helligdage)"].ToString(), out p) ? p : (int?)null,
+                            WeekendHelligdagOpstartsGebyr = int.TryParse(row["Opstartsgebyr (weekender/helligdage)"].ToString(), out p) ? p : (int?)null,
+                            WeekendHelligdagVentetid = int.TryParse(row["Timepris ventetid (weekender/helligdage)"].ToString(), out p) ? p : (int?)null,
+                            YderligInfo = row["Yderligere oplysninger"].ToString()
+                        };
+
+                        apiclient.UpdatePricelist(savedNewBid, priceList);
+
                         //DateTime firstContact;
                         //DateTime.TryParse(row["Første kontakt"].ToString(), out firstContact);
 
@@ -104,6 +178,8 @@ namespace ExcelReader
                         //yield return company;
                     }
                 }
+
+                apiclient.Close();
             }
         }
     }
