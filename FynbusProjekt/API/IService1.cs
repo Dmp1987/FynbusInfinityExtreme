@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -20,6 +21,9 @@ namespace API
         BidInfo GetBidinfo(int id);
 
         [OperationContract]
+        List<BidInfo> GetAllBidInfos();
+       
+        [OperationContract]
         ContactInfo GetContactInfo(int id);
 
         [OperationContract]
@@ -37,26 +41,33 @@ namespace API
         [OperationContract]
         BidInfo CreateBidInfo(BidInfo newBidInfo);
 
+        [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         [OperationContract]
         ContactInfo UpdateContactInfo(BidInfo bid, ContactInfo contact);
 
+        [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         [OperationContract]
         Documentation UpdateDocumentation(BidInfo bid, Documentation doc);
 
+        [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         [OperationContract]
         Equipment UpdateEquipment(BidInfo bid, Equipment eq);
 
+        [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         [OperationContract]
         ExpandedBidInfo UpdateExpandedBifInfo(BidInfo bid, ExpandedBidInfo exp);
 
+        [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         [OperationContract]
         PriceList UpdatePricelist(BidInfo bid, PriceList pl);
 
+        [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         [OperationContract]
         BidInfo UpdateBidInfo(BidInfo bid);
 
+        [WebInvoke(Method = "PUT", BodyStyle = WebMessageBodyStyle.WrappedRequest)]
         [OperationContract]
-        object importExcel(object ExcelDocument);
+        object ImportExcel(object excelDocument);
 
         //[OperationContract]
         //object UpdateContactInfo(BidInfo newBid);

@@ -7,36 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.Runtime.Serialization;
-
 namespace Model
 {
     using System;
     using System.Collections.Generic;
     
-    [DataContract]
     public partial class BidInfo
     {
-        [DataMember]
         public long id { get; set; }
-        [DataMember]
         public string BidderName { get; set; }
-        [DataMember]
         public int CVR { get; set; }
-        [DataMember]
         public System.DateTime LastEdit { get; set; }
-        [DataMember]
         public int OfferNumber { get; set; }
-
-        [DataMember]
+    
         public virtual ContactInfo ContactInfo { get; set; }
-        [DataMember]
         public virtual Documentation Documentation { get; set; }
-        [DataMember]
         public virtual Equipment Equipment { get; set; }
-        [DataMember]
         public virtual ExpandedBidInfo ExpandedBidInfo { get; set; }
-        [DataMember]
         public virtual PriceList PriceList { get; set; }
     }
 }

@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
+using System.Linq;
 using System.ServiceModel.Web;
 using Model;
 
@@ -7,13 +10,13 @@ namespace API
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
-    public class Service1 : IService1
+    public class Service1 : IService1, IDisposable
     {
         public string GetName(int id)
         {
             var db = new fynbusprojektEntities();
 
-            BidInfo bidinf = db.BidInfo.Find(1);
+            BidInfo bidinf = db.BidInfo.Find(id);
 
             //var newBidInf = new BidInfo {BidderName = "Kagemand"};
 
@@ -73,6 +76,15 @@ namespace API
             //};
         }
 
+        public List<BidInfo> GetAllBidInfos()
+        {
+            using (var db = new fynbusprojektEntities())
+            {
+                var rVal = db.BidInfo;
+                return rVal.ToList();
+            }
+        }
+
         public ContactInfo GetContactInfo(int id)
         {
             using (var db = new fynbusprojektEntities())
@@ -107,8 +119,8 @@ namespace API
         {
             using (var db = new fynbusprojektEntities())
             {
-                ExpandedBidInfo ExpInfo = db.ExpandedBidInfo.Find(id);
-                return ExpInfo;
+                ExpandedBidInfo expInfo = db.ExpandedBidInfo.Find(id);
+                return expInfo;
             }
         }
 
@@ -253,7 +265,12 @@ namespace API
         }
 
 
-        public object importExcel(object ExcelDocument)
+        public object ImportExcel(object excelDocument)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Dispose()
         {
             throw new NotImplementedException();
         }
