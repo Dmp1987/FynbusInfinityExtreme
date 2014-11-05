@@ -29,8 +29,9 @@
         
         <script type="text/javascript" src="SBAdmin/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="SBAdmin/js/sb-admin-2.js"></script>
-        <script type="text/javascript" src="SBAdmin/js/plugins/dataTables/dataTables.bootstrap.js"></script>
         <script type="text/javascript" src="SBAdmin/js/plugins/dataTables/jquery.dataTables.js"></script>
+        <script type="text/javascript" src="SBAdmin/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+        
         <script type="text/javascript" src="SBAdmin/js/plugins/metisMenu/metisMenu.js"></script>
         
         <style>

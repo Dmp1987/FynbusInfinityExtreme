@@ -1,23 +1,30 @@
 ﻿<%@ Page AutoEventWireup="true" CodeBehind="tilbudsoversigt.aspx.cs" Inherits="Web.Tilbudsoversigt" Language="C#" MasterPageFile="~/Site.Master" Title=""  EnableEventValidation="false"%>
 <%@ Import Namespace="Model" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#dataTable').DataTable({
-                searching: true,
-                ordering: true
-            });
-        });
-    </script>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function() {
+                $('#MainContent_gvBidinfos').DataTable({
+                    searching: true,
+                    ordering: true
+                });
+            }, 1);
+        });
+    </script>
+    
+    
+
     <h1 class="text-center">Tilbudsoversigt</h1>
     <hr/>
-            <table class="table table-bordered table-condensed table-hover table-responsive table-striped" id="dataTable" runat="Server">
+            <!--<table class="table table-bordered table-condensed table-hover table-responsive table-striped" id="dataTable" runat="Server">
                 <thead>
                     <tr>
                         
+                           
                         <th>
                             Tilbud
                         </th>
@@ -36,5 +43,9 @@
                         </td>
                     </tr>
                 </tbody>
-            </table>
+            </table>-->
+    
+    <asp:GridView runat="server" ID="gvBidinfos">
+        
+    </asp:GridView>
 </asp:Content>
