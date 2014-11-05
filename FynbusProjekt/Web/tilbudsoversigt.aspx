@@ -1,4 +1,5 @@
-﻿<%@ Page AutoEventWireup="true" CodeBehind="tilbudsoversigt.aspx.cs" Inherits="Web.tilbudsoversigt" Language="C#" MasterPageFile="~/Site.Master" Title=""  EnableEventValidation="false"%>
+﻿<%@ Page AutoEventWireup="true" CodeBehind="tilbudsoversigt.aspx.cs" Inherits="Web.Tilbudsoversigt" Language="C#" MasterPageFile="~/Site.Master" Title=""  EnableEventValidation="false"%>
+<%@ Import Namespace="Model" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <script type="text/javascript">
         $(document).ready(function () {
@@ -13,9 +14,10 @@
     
     <h1 class="text-center">Tilbudsoversigt</h1>
     <hr/>
-            <table class="table table-bordered table-condensed table-hover table-responsive table-striped" id="dataTable">
+            <table class="table table-bordered table-condensed table-hover table-responsive table-striped" id="dataTable" runat="Server">
                 <thead>
                     <tr>
+                        
                         <th>
                             Tilbud
                         </th>

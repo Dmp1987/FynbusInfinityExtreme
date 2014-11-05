@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web.UI;
-using Web.APIService;
+using Model;
 
 namespace Web
 {
@@ -22,7 +22,7 @@ namespace Web
                 budNr = budNr.Value
             };
 
-            using (var apiclient = new Service1Client())
+            using (var apiclient = new API.Service1())
             {
                 int tempVal;
                 //gem udvidet info
@@ -168,7 +168,6 @@ namespace Web
                     };
 
                     apiclient.UpdatePricelist(createdBid, pList);
-                    apiclient.Close();
                 }
             }
         }

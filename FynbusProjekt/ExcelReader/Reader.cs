@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
 using System.Diagnostics.CodeAnalysis;
-using ExcelReader.ServiceReference1;
+using Model;
 
 namespace ExcelReader
 {
@@ -29,7 +29,6 @@ namespace ExcelReader
             _connectionString =
                 "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + excelFilePath +
                 ";Extended Properties=\"Excel 8.0;HDR=Yes;IMEX=1\";OLE DB Services = -2;";
-            var apiclient = new Service1Client();
             using (var conn = new OleDbConnection(_connectionString))
             {
                 conn.Open();
@@ -78,8 +77,9 @@ namespace ExcelReader
                             CVR = int.Parse(row["CVR-nr#"].ToString()),
                             LastEdit = DateTime.Now
                         };
-                        
-                        var savedNewBid = apiclient.CreateBidInfo(bidinfo);
+
+                        var k = new API.Service1();
+                        var savedNewBid =  k.CreateBidInfo(bidinfo);
 
                         var docu = new Documentation()
                         {
@@ -87,33 +87,33 @@ namespace ExcelReader
 
                         };
 
-                        apiclient.UpdateDocumentation(savedNewBid, docu);
+                        k.UpdateDocumentation(savedNewBid, docu);
 
                         var exp = new ExpandedBidInfo()
                         {
                             GarantiVognNummer =
-                                int.TryParse(row["Evt. Garanti-vogn nummer:"].ToString(), out p) ? p : (int?) null,
-                            SecondaryOS = row["Evt. sekundært firma"].ToString(),
+                                int.TryParse(row["Evt# Garanti-vogn nummer:"].ToString(), out p) ? p : (int?) null,
+                            SecondaryOS = row["Evt# sekundært firma"].ToString(),
                             VognloebsNummer = int.TryParse(row["Vognløbs-nummer:"].ToString(), out p) ? p : (int?) null,
                             TelefonNummer = int.TryParse(row["Kommuni-kation til Planet / Telefon-nummer"].ToString(), out p) ? p : (int?) null,
                             VognType = int.TryParse(row["Vogn-type"].ToString(), out p) ? p : (int?) null
                         };
 
-                        apiclient.UpdateExpandedBifInfo(savedNewBid, exp);
+                        k.UpdateExpandedBifInfo(savedNewBid, exp);
 
                         var eq = new Equipment()
                         {
                             Barnestol_0_13kg =
-                                bool.TryParse(row["Barne-stole / 0 - 13 kg."].ToString(), out b) ? b : (bool?) null,
-                            Barnestol_9_18kg = bool.TryParse(row["Barne-stole / 9 - 18 kg."].ToString(), out b) ? b : (bool?) null,
-                            Barnestol_9_36kg = bool.TryParse(row["Barne.stole / 9 - 36 kg."].ToString(), out b) ? b : (bool?)null,
-                            Barnestol_15_36kg = bool.TryParse(row["Barne-stole / 15 - 36 kg."].ToString(), out b) ? b : (bool?)null,
+                                bool.TryParse(row["Barne-stole / 0 - 13 kg#"].ToString(), out b) ? b : (bool?) null,
+                            Barnestol_9_18kg = bool.TryParse(row["Barne-stole / 9 - 18 kg#"].ToString(), out b) ? b : (bool?) null,
+                            Barnestol_9_36kg = bool.TryParse(row["Barne#stole / 9 - 36 kg#"].ToString(), out b) ? b : (bool?)null,
+                            Barnestol_15_36kg = bool.TryParse(row["Barne-stole / 15 - 36 kg#"].ToString(), out b) ? b : (bool?)null,
                             Barnestol_Integreret = bool.TryParse(row["Barne-stole / Integreret i sæde"].ToString(), out b) ? b : (bool?)null,
-                            TrappeMaskine_120 = bool.TryParse(row["Trappe-maskine / 120 kg."].ToString(), out b) ? b : (bool?)null,
-                            TrappeMaskine_160 = bool.TryParse(row["Trappe-maskine / 160 kg."].ToString(), out b) ? b : (bool?)null
+                            TrappeMaskine_120 = bool.TryParse(row["Trappe-maskine / 120 kg#"].ToString(), out b) ? b : (bool?)null,
+                            TrappeMaskine_160 = bool.TryParse(row["Trappe-maskine / 160 kg#"].ToString(), out b) ? b : (bool?)null
                         };
 
-                        apiclient.UpdateEquipment(savedNewBid, eq);
+                        k.UpdateEquipment(savedNewBid, eq);
 
                         var contact = new ContactInfo()
                         {
@@ -124,7 +124,7 @@ namespace ExcelReader
                             Vejnummer = int.TryParse(row["Hjem-sted vej-nummer"].ToString(), out p) ? p : (int?)null,
                         };
 
-                        apiclient.UpdateContactInfo(savedNewBid, contact);
+                        k.UpdateContactInfo(savedNewBid, contact);
 
                         var priceList = new PriceList()
                         {
@@ -134,14 +134,15 @@ namespace ExcelReader
                             HverdageKoersel = int.TryParse(row["Opstartsgebyr (hverdage aften/nat)"].ToString(), out p) ? p : (int?)null,
                             HverdageOpstartsGebyr = int.TryParse(row["Opstartsgebyr (hverdage)"].ToString(), out p) ? p : (int?)null,
                             HverdageVenteTid = int.TryParse(row["Timepris ventetid (hverdage):"].ToString(), out p) ? p : (int?)null,
-                            PrisPerLoeft_Trappemaskine = int.TryParse(row["Pris pr. løft med trappemaskine"].ToString(), out p) ? p : (int?)null,
+                            PrisPerLoeft_Trappemaskine = int.TryParse(row["Pris pr# løft med trappemaskine"].ToString(), out p) ? p : (int?)null,
                             WeekendHelligdagKoersel = int.TryParse(row["Timepris køretid (weekender/helligdage)"].ToString(), out p) ? p : (int?)null,
                             WeekendHelligdagOpstartsGebyr = int.TryParse(row["Opstartsgebyr (weekender/helligdage)"].ToString(), out p) ? p : (int?)null,
                             WeekendHelligdagVentetid = int.TryParse(row["Timepris ventetid (weekender/helligdage)"].ToString(), out p) ? p : (int?)null,
                             YderligInfo = row["Yderligere oplysninger"].ToString()
                         };
 
-                        apiclient.UpdatePricelist(savedNewBid, priceList);
+                        k.UpdatePricelist(savedNewBid, priceList);
+
 
                         //DateTime firstContact;
                         //DateTime.TryParse(row["Første kontakt"].ToString(), out firstContact);
@@ -179,7 +180,6 @@ namespace ExcelReader
                     }
                 }
 
-                apiclient.Close();
             }
         }
     }
