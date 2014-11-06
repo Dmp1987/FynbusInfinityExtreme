@@ -258,6 +258,7 @@ namespace API
                 var getBid = db.Entry(bid).Entity;
 
                 if (getBid == null || getBid.id != bid.id) return null;
+                getBid.LastEdit = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
                 db.BidInfo.AddOrUpdate(bid);
                 db.SaveChanges();
                 return db.BidInfo.Find(bid.id);

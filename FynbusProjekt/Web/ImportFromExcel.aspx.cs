@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -23,7 +24,13 @@ namespace Web
 
                 var excelFilePath = MapPath("/Uploads/" + exFileUpload.FileName);
 
-                Reader.ReadFromExcel(excelFilePath);
+                bool success = Reader.ReadFromExcel(excelFilePath);
+
+                if (success)
+                {
+                    uploadbox.Visible = false;
+                    successbox.Visible = true;
+                }
             }
         }
     }

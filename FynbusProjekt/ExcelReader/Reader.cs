@@ -22,7 +22,7 @@ namespace ExcelReader
         }
 
         [SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
-        public static void ReadFromExcel(string excelFilePath)
+        public static bool ReadFromExcel(string excelFilePath)
         {
             var ds = new DataSet();
 
@@ -143,6 +143,7 @@ namespace ExcelReader
 
                         k.UpdatePricelist(savedNewBid, priceList);
 
+                        
 
                         //DateTime firstContact;
                         //DateTime.TryParse(row["Første kontakt"].ToString(), out firstContact);
@@ -181,6 +182,7 @@ namespace ExcelReader
                 }
 
             }
+            return true;
         }
     }
 }

@@ -7,12 +7,22 @@
     
     <script type="text/javascript">
         $(document).ready(function () {
-            setTimeout(function() {
+
+
+            
+
+            setTimeout(function () {
+                $.each($('table tbody tr td:nth-child(1)'), function () {
+                    var tempval = $(this).text();
+
+                    $(this).html('<a href="/edit.aspx?id=' + tempval + '">' + tempval + '</a>');
+                    console.log(this);
+                });
                 $('#MainContent_gvBidinfos').DataTable({
                     searching: true,
                     ordering: true
                 });
-            }, 1);
+            }, 20);
         });
     </script>
     
@@ -20,30 +30,7 @@
 
     <h1 class="text-center">Tilbudsoversigt</h1>
     <hr/>
-            <!--<table class="table table-bordered table-condensed table-hover table-responsive table-striped" id="dataTable" runat="Server">
-                <thead>
-                    <tr>
-                        
-                           
-                        <th>
-                            Tilbud
-                        </th>
-                        <th>
-                            Etellerandet
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            Kage med Ost
-                        </td>
-                        <td>
-                            Noget
-                        </td>
-                    </tr>
-                </tbody>
-            </table>-->
+          
     
     <asp:GridView runat="server" ID="gvBidinfos">
         
