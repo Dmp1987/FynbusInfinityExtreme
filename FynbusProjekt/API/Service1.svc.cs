@@ -137,7 +137,6 @@ namespace API
         {
             using (var db = new fynbusprojektEntities())
             {
-                var bidInfo = new BidInfo();
                 var doc = new Documentation();
                 var exp = new ExpandedBidInfo();
                 var pList = new PriceList();
