@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
 using System.Diagnostics.CodeAnalysis;
+using API;
 using Model;
 
 namespace ExcelReader
@@ -14,7 +13,6 @@ namespace ExcelReader
 
         private static void ImportExcelController()
         {
-
             //_connectionString =
             //    "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + fileName +
             //    ";Extended Properties=\"Excel 8.0;HDR=Yes;IMEX=1\";OLE DB Services = -2;";
@@ -22,7 +20,7 @@ namespace ExcelReader
         }
 
         [SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
-        public static void ReadFromExcel(string excelFilePath)
+        public static bool ReadFromExcel(string excelFilePath)
         {
             var ds = new DataSet();
 
@@ -38,27 +36,21 @@ namespace ExcelReader
 
                 if (excelSchema != null)
                 {
-                    
-                    int count = 0;
-
-                    if (excelSchema != null)
-                        foreach (DataRow row in excelSchema.Rows)
+                    foreach (DataRow row in excelSchema.Rows)
+                    {
+                        try
                         {
-                            count++;
-                            try
-                            {
-                                    string sheetName = row["TABLE_NAME"].ToString();
-                                    cmd.CommandText = "SELECT * FROM [" + sheetName + "A6:AG]";
-                                    var dt = new DataTable { TableName = sheetName };
-                                    var da = new OleDbDataAdapter(cmd);
-                                    da.Fill(dt);
-                                    ds.Tables.Add(dt);
-                            
-                            }
-                            catch (Exception)
-                            {
-                            }
+                            string sheetName = row["TABLE_NAME"].ToString();
+                            cmd.CommandText = "SELECT * FROM [" + sheetName + "A6:AG]";
+                            var dt = new DataTable {TableName = sheetName};
+                            var da = new OleDbDataAdapter(cmd);
+                            da.Fill(dt);
+                            ds.Tables.Add(dt);
                         }
+                        catch (Exception)
+                        {
+                        }
+                    }
                 }
                 /*
                                 cmd = null;
@@ -71,73 +63,107 @@ namespace ExcelReader
                     {
                         int p;
                         bool b;
-                        var bidinfo = new BidInfo()
+                        var bidinfo = new BidInfo
                         {
                             BidderName = row["Byders (firma)navn"].ToString(),
                             CVR = int.Parse(row["CVR-nr#"].ToString()),
                             LastEdit = DateTime.Now
                         };
 
-                        var k = new API.Service1();
-                        var savedNewBid =  k.CreateBidInfo(bidinfo);
+                        var k = new Service1();
+                        BidInfo savedNewBid = k.CreateBidInfo(bidinfo);
 
-                        var docu = new Documentation()
+                        var docu = new Documentation
                         {
                             RegistreringsNummer = row["Registreringsnr#"].ToString(),
-
                         };
 
                         k.UpdateDocumentation(savedNewBid, docu);
 
-                        var exp = new ExpandedBidInfo()
+                        var exp = new ExpandedBidInfo
                         {
                             GarantiVognNummer =
                                 int.TryParse(row["Evt# Garanti-vogn nummer:"].ToString(), out p) ? p : (int?) null,
                             SecondaryOS = row["Evt# sekundært firma"].ToString(),
                             VognloebsNummer = int.TryParse(row["Vognløbs-nummer:"].ToString(), out p) ? p : (int?) null,
-                            TelefonNummer = int.TryParse(row["Kommuni-kation til Planet / Telefon-nummer"].ToString(), out p) ? p : (int?) null,
+                            TelefonNummer =
+                                int.TryParse(row["Kommuni-kation til Planet / Telefon-nummer"].ToString(), out p)
+                                    ? p
+                                    : (int?) null,
                             VognType = int.TryParse(row["Vogn-type"].ToString(), out p) ? p : (int?) null
                         };
 
                         k.UpdateExpandedBifInfo(savedNewBid, exp);
 
-                        var eq = new Equipment()
+                        var eq = new Equipment
                         {
                             Barnestol_0_13kg =
                                 bool.TryParse(row["Barne-stole / 0 - 13 kg#"].ToString(), out b) ? b : (bool?) null,
-                            Barnestol_9_18kg = bool.TryParse(row["Barne-stole / 9 - 18 kg#"].ToString(), out b) ? b : (bool?) null,
-                            Barnestol_9_36kg = bool.TryParse(row["Barne#stole / 9 - 36 kg#"].ToString(), out b) ? b : (bool?)null,
-                            Barnestol_15_36kg = bool.TryParse(row["Barne-stole / 15 - 36 kg#"].ToString(), out b) ? b : (bool?)null,
-                            Barnestol_Integreret = bool.TryParse(row["Barne-stole / Integreret i sæde"].ToString(), out b) ? b : (bool?)null,
-                            TrappeMaskine_120 = bool.TryParse(row["Trappe-maskine / 120 kg#"].ToString(), out b) ? b : (bool?)null,
-                            TrappeMaskine_160 = bool.TryParse(row["Trappe-maskine / 160 kg#"].ToString(), out b) ? b : (bool?)null
+                            Barnestol_9_18kg =
+                                bool.TryParse(row["Barne-stole / 9 - 18 kg#"].ToString(), out b) ? b : (bool?) null,
+                            Barnestol_9_36kg =
+                                bool.TryParse(row["Barne#stole / 9 - 36 kg#"].ToString(), out b) ? b : (bool?) null,
+                            Barnestol_15_36kg =
+                                bool.TryParse(row["Barne-stole / 15 - 36 kg#"].ToString(), out b) ? b : (bool?) null,
+                            Barnestol_Integreret =
+                                bool.TryParse(row["Barne-stole / Integreret i sæde"].ToString(), out b)
+                                    ? b
+                                    : (bool?) null,
+                            TrappeMaskine_120 =
+                                bool.TryParse(row["Trappe-maskine / 120 kg#"].ToString(), out b) ? b : (bool?) null,
+                            TrappeMaskine_160 =
+                                bool.TryParse(row["Trappe-maskine / 160 kg#"].ToString(), out b) ? b : (bool?) null
                         };
 
                         k.UpdateEquipment(savedNewBid, eq);
 
-                        var contact = new ContactInfo()
+                        var contact = new ContactInfo
                         {
                             City = row["Hjemsted By"].ToString(),
                             Kommune = row["Hjem-sted Kom-mune"].ToString(),
-                            Postnummer = int.TryParse(row["Hjem-sted Post-nummer"].ToString(), out p) ? p : (int?)null,
+                            Postnummer = int.TryParse(row["Hjem-sted Post-nummer"].ToString(), out p) ? p : (int?) null,
                             Vejnavn = row["Hjemsted vejnavn"].ToString(),
-                            Vejnummer = int.TryParse(row["Hjem-sted vej-nummer"].ToString(), out p) ? p : (int?)null,
+                            Vejnummer = int.TryParse(row["Hjem-sted vej-nummer"].ToString(), out p) ? p : (int?) null,
                         };
 
                         k.UpdateContactInfo(savedNewBid, contact);
 
-                        var priceList = new PriceList()
+                        var priceList = new PriceList
                         {
-                            HverdagAftenNatKoersel = int.TryParse(row["Timepris for køretid (hverdage aften/nat)"].ToString(), out p) ? p : (int?)null,
-                            HverdagAftenNatOpstartsGebyr = int.TryParse(row["Opstartsgebyr (hverdage aften/nat)"].ToString(), out p) ? p : (int?)null,
-                            HverdagAftenNatVentetid = int.TryParse(row["Timepris for ventetid (hverdage aften/nat)"].ToString(), out p) ? p : (int?)null,
-                            HverdageKoersel = int.TryParse(row["Opstartsgebyr (hverdage aften/nat)"].ToString(), out p) ? p : (int?)null,
-                            HverdageOpstartsGebyr = int.TryParse(row["Opstartsgebyr (hverdage)"].ToString(), out p) ? p : (int?)null,
-                            HverdageVenteTid = int.TryParse(row["Timepris ventetid (hverdage):"].ToString(), out p) ? p : (int?)null,
-                            PrisPerLoeft_Trappemaskine = int.TryParse(row["Pris pr# løft med trappemaskine"].ToString(), out p) ? p : (int?)null,
-                            WeekendHelligdagKoersel = int.TryParse(row["Timepris køretid (weekender/helligdage)"].ToString(), out p) ? p : (int?)null,
-                            WeekendHelligdagOpstartsGebyr = int.TryParse(row["Opstartsgebyr (weekender/helligdage)"].ToString(), out p) ? p : (int?)null,
-                            WeekendHelligdagVentetid = int.TryParse(row["Timepris ventetid (weekender/helligdage)"].ToString(), out p) ? p : (int?)null,
+                            HverdagAftenNatKoersel =
+                                int.TryParse(row["Timepris for køretid (hverdage aften/nat)"].ToString(), out p)
+                                    ? p
+                                    : (int?) null,
+                            HverdagAftenNatOpstartsGebyr =
+                                int.TryParse(row["Opstartsgebyr (hverdage aften/nat)"].ToString(), out p)
+                                    ? p
+                                    : (int?) null,
+                            HverdagAftenNatVentetid =
+                                int.TryParse(row["Timepris for ventetid (hverdage aften/nat)"].ToString(), out p)
+                                    ? p
+                                    : (int?) null,
+                            HverdageKoersel =
+                                int.TryParse(row["Opstartsgebyr (hverdage aften/nat)"].ToString(), out p)
+                                    ? p
+                                    : (int?) null,
+                            HverdageOpstartsGebyr =
+                                int.TryParse(row["Opstartsgebyr (hverdage)"].ToString(), out p) ? p : (int?) null,
+                            HverdageVenteTid =
+                                int.TryParse(row["Timepris ventetid (hverdage):"].ToString(), out p) ? p : (int?) null,
+                            PrisPerLoeft_Trappemaskine =
+                                int.TryParse(row["Pris pr# løft med trappemaskine"].ToString(), out p) ? p : (int?) null,
+                            WeekendHelligdagKoersel =
+                                int.TryParse(row["Timepris køretid (weekender/helligdage)"].ToString(), out p)
+                                    ? p
+                                    : (int?) null,
+                            WeekendHelligdagOpstartsGebyr =
+                                int.TryParse(row["Opstartsgebyr (weekender/helligdage)"].ToString(), out p)
+                                    ? p
+                                    : (int?) null,
+                            WeekendHelligdagVentetid =
+                                int.TryParse(row["Timepris ventetid (weekender/helligdage)"].ToString(), out p)
+                                    ? p
+                                    : (int?) null,
                             YderligInfo = row["Yderligere oplysninger"].ToString()
                         };
 
@@ -179,8 +205,8 @@ namespace ExcelReader
                         //yield return company;
                     }
                 }
-
             }
+            return true;
         }
     }
 }
