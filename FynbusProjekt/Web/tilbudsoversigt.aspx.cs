@@ -15,11 +15,18 @@ namespace Web
         {
             using (var db = new fynbusprojektEntities())
             {
-                gvBidinfos.DataSource = db.BidInfo.ToList();
+                try
+                {
+                    gvBidinfos.DataSource = db.BidInfo.ToList();
 
-                gvBidinfos.CssClass = "table table-bordered table-condensed table-hover table-responsive table-striped";
-                gvBidinfos.DataBind();
-                gvBidinfos.HeaderRow.TableSection = TableRowSection.TableHeader;
+                    gvBidinfos.CssClass = "table table-bordered table-condensed table-hover table-responsive table-striped";
+                    gvBidinfos.DataBind();
+                    gvBidinfos.HeaderRow.TableSection = TableRowSection.TableHeader;
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception);
+                }
             }
         }
     }
